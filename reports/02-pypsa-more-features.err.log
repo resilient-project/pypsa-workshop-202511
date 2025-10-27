@@ -28,71 +28,41 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
+fig = plt.figure(figsize=(7, 7))
+ax = plt.axes(projection=ccrs.EqualEarth())
+
 n.plot(
-    margin=1,
-    bus_sizes=1,
-    bus_colors="orange",
-    bus_alpha=0.8,
-    color_geomap=True,
-    line_colors="orchid",
-    line_widths=3,
-    title="Test",
+    ax=ax,
+    bus_sizes=0,
+    line_colors=line_loading,
+    line_cmap="plasma",
+    line_widths=n.lines.s_nom / 1000,
+)
+
+plt.colorbar(
+    plt.cm.ScalarMappable(cmap="plasma", norm=norm),
+    ax=ax,
+    label="Relative line loading [%]",
+    shrink=0.6,
 )
 ------------------
 
 
 [31m---------------------------------------------------------------------------[39m
-[31mTypeError[39m                                 Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[31][39m[32m, line 1[39m
-[32m----> [39m[32m1[39m [43mn[49m[43m.[49m[43mplot[49m[43m([49m
-[32m      2[39m [43m    [49m[43mmargin[49m[43m=[49m[32;43m1[39;49m[43m,[49m
-[32m      3[39m [43m    [49m[43mbus_sizes[49m[43m=[49m[32;43m1[39;49m[43m,[49m
-[32m      4[39m [43m    [49m[43mbus_colors[49m[43m=[49m[33;43m"[39;49m[33;43morange[39;49m[33;43m"[39;49m[43m,[49m
-[32m      5[39m [43m    [49m[43mbus_alpha[49m[43m=[49m[32;43m0.8[39;49m[43m,[49m
-[32m      6[39m [43m    [49m[43mcolor_geomap[49m[43m=[49m[38;5;28;43;01mTrue[39;49;00m[43m,[49m
-[32m      7[39m [43m    [49m[43mline_colors[49m[43m=[49m[33;43m"[39;49m[33;43morchid[39;49m[33;43m"[39;49m[43m,[49m
-[32m      8[39m [43m    [49m[43mline_widths[49m[43m=[49m[32;43m3[39;49m[43m,[49m
-[32m      9[39m [43m    [49m[43mtitle[49m[43m=[49m[33;43m"[39;49m[33;43mTest[39;49m[33;43m"[39;49m[43m,[49m
-[32m     10[39m [43m)[49m
+[31mNameError[39m                                 Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[73][39m[32m, line 13[39m
+[32m      2[39m ax = plt.axes(projection=ccrs.EqualEarth())
+[32m      4[39m n.plot(
+[32m      5[39m     ax=ax,
+[32m      6[39m     bus_sizes=[32m0[39m,
+[32m   (...)[39m[32m      9[39m     line_widths=n.lines.s_nom / [32m1000[39m,
+[32m     10[39m )
+[32m     12[39m plt.colorbar(
+[32m---> [39m[32m13[39m     plt.cm.ScalarMappable(cmap=[33m"[39m[33mplasma[39m[33m"[39m, norm=[43mnorm[49m),
+[32m     14[39m     ax=ax,
+[32m     15[39m     label=[33m"[39m[33mRelative line loading [[39m[33m%[39m[33m][39m[33m"[39m,
+[32m     16[39m     shrink=[32m0.6[39m,
+[32m     17[39m )
 
-[36mFile [39m[32m/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/pypsa/plot/accessor.py:32[39m, in [36mPlotAccessor.__call__[39m[34m(self, *args, **kwargs)[39m
-[32m     29[39m [38;5;129m@functools[39m.wraps(plot)
-[32m     30[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34m__call__[39m([38;5;28mself[39m, *args: Any, **kwargs: Any) -> Any:
-[32m     31[39m [38;5;250m    [39m[33;03m"""Alias for [pypsa.Network.plot.map][pypsa.plot.PlotAccessor.map]."""[39;00m
-[32m---> [39m[32m32[39m     [38;5;28;01mreturn[39;00m [43mplot[49m[43m([49m[38;5;28;43mself[39;49m[43m.[49m[43m_n[49m[43m,[49m[43m [49m[43m*[49m[43margs[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
-
-[36mFile [39m[32m/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/pypsa/common.py:527[39m, in [36mdeprecated_kwargs.<locals>.deco.<locals>.wrapper[39m[34m(*args, **kwargs)[39m
-[32m    522[39m [38;5;129m@functools[39m.wraps(f)
-[32m    523[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mwrapper[39m(*args: Any, **kwargs: Any) -> Any:
-[32m    524[39m     rename_deprecated_kwargs(
-[32m    525[39m         f.[34m__name__[39m, kwargs, aliases, deprecated_in, removed_in
-[32m    526[39m     )
-[32m--> [39m[32m527[39m     [38;5;28;01mreturn[39;00m [43mf[49m[43m([49m[43m*[49m[43margs[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
-
-[36mFile [39m[32m/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/pypsa/plot/maps/static.py:1310[39m, in [36mplot[39m[34m(n, ax, layouter, boundaries, margin, projection, geomap, geomap_resolution, geomap_color, title, jitter, **kwargs)[39m
-[32m   1300[39m [38;5;66;03m# setup plotter[39;00m
-[32m   1301[39m plotter = MapPlotter(
-[32m   1302[39m     n,
-[32m   1303[39m     layouter,
-[32m   (...)[39m[32m   1307[39m     jitter=jitter,
-[32m   1308[39m )
-[32m-> [39m[32m1310[39m [38;5;28;01mreturn[39;00m [43mplotter[49m[43m.[49m[43mdraw_map[49m[43m([49m
-[32m   1311[39m [43m    [49m[43max[49m[43m,[49m
-[32m   1312[39m [43m    [49m[43mprojection[49m[43m=[49m[43mprojection[49m[43m,[49m
-[32m   1313[39m [43m    [49m[43mgeomap[49m[43m=[49m[43mgeomap[49m[43m,[49m
-[32m   1314[39m [43m    [49m[43mgeomap_resolution[49m[43m=[49m[43mgeomap_resolution[49m[43m,[49m
-[32m   1315[39m [43m    [49m[43mgeomap_color[49m[43m=[49m[43mgeomap_color[49m[43m,[49m
-[32m   1316[39m [43m    [49m[43mtitle[49m[43m=[49m[43mtitle[49m[43m,[49m
-[32m   1317[39m [43m    [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m,[49m
-[32m   1318[39m [43m[49m[43m)[49m
-
-[36mFile [39m[32m/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/pypsa/common.py:527[39m, in [36mdeprecated_kwargs.<locals>.deco.<locals>.wrapper[39m[34m(*args, **kwargs)[39m
-[32m    522[39m [38;5;129m@functools[39m.wraps(f)
-[32m    523[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mwrapper[39m(*args: Any, **kwargs: Any) -> Any:
-[32m    524[39m     rename_deprecated_kwargs(
-[32m    525[39m         f.[34m__name__[39m, kwargs, aliases, deprecated_in, removed_in
-[32m    526[39m     )
-[32m--> [39m[32m527[39m     [38;5;28;01mreturn[39;00m [43mf[49m[43m([49m[43m*[49m[43margs[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
-
-[31mTypeError[39m: MapPlotter.draw_map() got an unexpected keyword argument 'color_geomap'
+[31mNameError[39m: name 'norm' is not defined
 

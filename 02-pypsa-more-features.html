@@ -499,13 +499,13 @@ document.write(`
 <section id="let-s-consider-a-more-general-form-of-an-electricity-dispatch-problem">
 <h2>Let’s consider a more general form of an electricity dispatch problem<a class="headerlink" href="#let-s-consider-a-more-general-form-of-an-electricity-dispatch-problem" title="Link to this heading">#</a></h2>
 <p>For an <em>hourly</em> electricity market dispatch simulation, PyPSA will solve an optimisation problem that looks like this</p>
-<div class="amsmath math notranslate nohighlight" id="equation-94906baa-3dd3-4944-a38c-103d9e75966a">
-<span class="eqno">(3)<a class="headerlink" href="#equation-94906baa-3dd3-4944-a38c-103d9e75966a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a6deb615-4fb8-4983-a3eb-265d0765e08f">
+<span class="eqno">(3)<a class="headerlink" href="#equation-a6deb615-4fb8-4983-a3eb-265d0765e08f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \min_{g_{i,s,t}; f_{\ell,t}; g_{i,r,t,\text{charge}}; g_{i,r,t,\text{discharge}}; e_{i,r,t}} \sum_{i,s,t} o_{s} g_{i,s,t}
 \end{equation}\]</div>
 <p>such that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0dd69b95-712f-4104-9bbd-372fa69dc9c9">
-<span class="eqno">(4)<a class="headerlink" href="#equation-0dd69b95-712f-4104-9bbd-372fa69dc9c9" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-3c1a66e1-d149-4d1a-bfea-fdcc851a9f21">
+<span class="eqno">(4)<a class="headerlink" href="#equation-3c1a66e1-d149-4d1a-bfea-fdcc851a9f21" title="Permalink to this equation">#</a></span>\[\begin{align}
 0 &amp; \leq g_{i,s,t} \leq \hat{g}_{i,s,t} G_{i,s}  &amp; \text{generation limits : generator} \\
 -F_\ell &amp;\leq f_{\ell,t} \leq F_\ell &amp; \text{transmission limits : line}  \\
 d_{i,t} &amp;= \sum_s g_{i,s,t} + \sum_r g_{i,r,t,\text{discharge}} - \sum_r g_{i,r,t,\text{charge}} - \sum_\ell K_{i\ell} f_{\ell,t} &amp; \text{nodal energy balance : bus} \\
@@ -1623,7 +1623,7 @@ Solver message: Optimal
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.12.0 (git hash: 755a8e0): Copyright (c) 2025 HiGHS under MIT licence terms
-LP linopy-problem-2b4tvq0w has 14 rows; 6 cols; 19 nonzeros
+LP linopy-problem-rj8klj64 has 14 rows; 6 cols; 19 nonzeros
 Coefficient ranges:
   Matrix  [1e+00, 1e+00]
   Cost    [2e+01, 2e+02]
@@ -1636,12 +1636,12 @@ Presolve reductions: rows 0(-14); columns 0(-6); nonzeros 0(-19) - Reduced to em
 Performed postsolve
 Solving the original LP from the solution after postsolve
 
-Model name          : linopy-problem-2b4tvq0w
+Model name          : linopy-problem-rj8klj64
 Model status        : Optimal
 Objective value     :  1.3813912524e+06
 P-D objective error :  0.0000000000e+00
 HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-hl_a1d7y.sol
+Writing the solution to /tmp/linopy-solve-8kqim98s.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
@@ -1909,8 +1909,8 @@ Writing the solution to /tmp/linopy-solve-hl_a1d7y.sol
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;nodes&#39;: {&#39;Bus&#39;: &lt;matplotlib.collections.PatchCollection at 0x7fda6117d2b0&gt;},
- &#39;branches&#39;: {&#39;Line&#39;: &lt;matplotlib.collections.LineCollection at 0x7fda6117d400&gt;},
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;nodes&#39;: {&#39;Bus&#39;: &lt;matplotlib.collections.PatchCollection at 0x7f60d02312b0&gt;},
+ &#39;branches&#39;: {&#39;Line&#39;: &lt;matplotlib.collections.LineCollection at 0x7f60d0231400&gt;},
  &#39;flows&#39;: {}}
 </pre></div>
 </div>
@@ -1935,8 +1935,8 @@ Downloading: https://naturalearth.s3.amazonaws.com/50m_physical/ne_50m_coastline
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;nodes&#39;: {&#39;Bus&#39;: &lt;matplotlib.collections.PatchCollection at 0x7fda60f5d810&gt;},
- &#39;branches&#39;: {&#39;Line&#39;: &lt;matplotlib.collections.LineCollection at 0x7fda60f5d950&gt;},
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;nodes&#39;: {&#39;Bus&#39;: &lt;matplotlib.collections.PatchCollection at 0x7f60caf3d810&gt;},
+ &#39;branches&#39;: {&#39;Line&#39;: &lt;matplotlib.collections.LineCollection at 0x7f60caf3d950&gt;},
  &#39;flows&#39;: {}}
 </pre></div>
 </div>
@@ -1951,7 +1951,6 @@ Downloading: https://naturalearth.s3.amazonaws.com/50m_physical/ne_50m_coastline
     <span class="n">bus_sizes</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
     <span class="n">bus_colors</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span>
     <span class="n">bus_alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span>
-    <span class="n">color_geomap</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">line_colors</span><span class="o">=</span><span class="s2">&quot;orchid&quot;</span><span class="p">,</span>
     <span class="n">line_widths</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
     <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Test&quot;</span><span class="p">,</span>
@@ -1960,62 +1959,12 @@ Downloading: https://naturalearth.s3.amazonaws.com/50m_physical/ne_50m_coastline
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">31</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">n</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">margin</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">bus_sizes</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">bus_colors</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">bus_alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">color_geomap</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">line_colors</span><span class="o">=</span><span class="s2">&quot;orchid&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="n">line_widths</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Test&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/pypsa/plot/accessor.py:32,</span> in <span class="ni">PlotAccessor.__call__</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">29</span> <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">plot</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">30</span> <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">31</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Alias for [pypsa.Network.plot.map][pypsa.plot.PlotAccessor.map].&quot;&quot;&quot;</span>
-<span class="ne">---&gt; </span><span class="mi">32</span>     <span class="k">return</span> <span class="n">plot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_n</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/pypsa/common.py:527,</span> in <span class="ni">deprecated_kwargs.&lt;locals&gt;.deco.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">522</span> <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">523</span> <span class="k">def</span><span class="w"> </span><span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">524</span>     <span class="n">rename_deprecated_kwargs</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">525</span>         <span class="n">f</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">,</span> <span class="n">aliases</span><span class="p">,</span> <span class="n">deprecated_in</span><span class="p">,</span> <span class="n">removed_in</span>
-<span class="g g-Whitespace">    </span><span class="mi">526</span>     <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">527</span>     <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/pypsa/plot/maps/static.py:1310,</span> in <span class="ni">plot</span><span class="nt">(n, ax, layouter, boundaries, margin, projection, geomap, geomap_resolution, geomap_color, title, jitter, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1300</span> <span class="c1"># setup plotter</span>
-<span class="g g-Whitespace">   </span><span class="mi">1301</span> <span class="n">plotter</span> <span class="o">=</span> <span class="n">MapPlotter</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1302</span>     <span class="n">n</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1303</span>     <span class="n">layouter</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>   <span class="mi">1307</span>     <span class="n">jitter</span><span class="o">=</span><span class="n">jitter</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1308</span> <span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1310</span> <span class="k">return</span> <span class="n">plotter</span><span class="o">.</span><span class="n">draw_map</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1311</span>     <span class="n">ax</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1312</span>     <span class="n">projection</span><span class="o">=</span><span class="n">projection</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1313</span>     <span class="n">geomap</span><span class="o">=</span><span class="n">geomap</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1314</span>     <span class="n">geomap_resolution</span><span class="o">=</span><span class="n">geomap_resolution</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1315</span>     <span class="n">geomap_color</span><span class="o">=</span><span class="n">geomap_color</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1316</span>     <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1317</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1318</span> <span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/pypsa/common.py:527,</span> in <span class="ni">deprecated_kwargs.&lt;locals&gt;.deco.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">522</span> <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">523</span> <span class="k">def</span><span class="w"> </span><span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">524</span>     <span class="n">rename_deprecated_kwargs</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">525</span>         <span class="n">f</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">,</span> <span class="n">aliases</span><span class="p">,</span> <span class="n">deprecated_in</span><span class="p">,</span> <span class="n">removed_in</span>
-<span class="g g-Whitespace">    </span><span class="mi">526</span>     <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">527</span>     <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="ne">TypeError</span>: MapPlotter.draw_map() got an unexpected keyword argument &#39;color_geomap&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;nodes&#39;: {&#39;Bus&#39;: &lt;matplotlib.collections.PatchCollection at 0x7f60caf99e50&gt;},
+ &#39;branches&#39;: {&#39;Line&#39;: &lt;matplotlib.collections.LineCollection at 0x7f60caf99f90&gt;},
+ &#39;flows&#39;: {}}
 </pre></div>
 </div>
+<img alt="_images/5f049c6fe2c75bac7a9fc7b82953954a697990cc66b614b00635b63fe3470a68.png" src="_images/5f049c6fe2c75bac7a9fc7b82953954a697990cc66b614b00635b63fe3470a68.png" />
 </div>
 </div>
 <p>We can use the <code class="docutils literal notranslate"><span class="pre">bus_sizes</span></code> argument of <code class="docutils literal notranslate"><span class="pre">n.plot()</span></code> to display the regional distribution of load. First, we calculate the total load per bus:</p>
@@ -2023,6 +1972,14 @@ Downloading: https://naturalearth.s3.amazonaws.com/50m_physical/ne_50m_coastline
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">n</span><span class="o">.</span><span class="n">loads</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;bus&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">p_set</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="mf">1e4</span>
 <span class="n">s</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bus
+MZ    0.065
+SA    4.200
+Name: p_set, dtype: float64
 </pre></div>
 </div>
 </div>
@@ -2034,6 +1991,14 @@ Downloading: https://naturalearth.s3.amazonaws.com/50m_physical/ne_50m_coastline
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;nodes&#39;: {&#39;Bus&#39;: &lt;matplotlib.collections.PatchCollection at 0x7f60cafd9950&gt;},
+ &#39;branches&#39;: {&#39;Line&#39;: &lt;matplotlib.collections.LineCollection at 0x7f60cafd9a90&gt;},
+ &#39;flows&#39;: {}}
+</pre></div>
+</div>
+<img alt="_images/5dc60493c71b00cb9e4bf3b91403b90733ecafc0d3821492ab18074f1939c107.png" src="_images/5dc60493c71b00cb9e4bf3b91403b90733ecafc0d3821492ab18074f1939c107.png" />
+</div>
 </div>
 <p>The important point here is, that <code class="docutils literal notranslate"><span class="pre">s</span></code> needs to have entries for all buses, i.e. its index needs to match <code class="docutils literal notranslate"><span class="pre">n.buses.index</span></code>.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">bus_sizes</span></code> argument of <code class="docutils literal notranslate"><span class="pre">n.plot()</span></code> can be even more powerful. It can produce pie charts, e.g. for the mix of electricity generation at each bus.</p>
@@ -2044,11 +2009,33 @@ Downloading: https://naturalearth.s3.amazonaws.com/50m_physical/ne_50m_coastline
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>name
+MZ hydro     1150.0
+SA coal     35000.0
+SA wind      3000.0
+SA gas       1500.0
+SA oil       2000.0
+Name: now, dtype: float64
+</pre></div>
+</div>
+</div>
 </div>
 <p>If we group this by the <strong>bus</strong> and <strong>carrier</strong>…</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">.</span><span class="n">generators</span><span class="o">.</span><span class="n">carrier</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>name
+MZ hydro    hydro
+SA coal      coal
+SA wind      wind
+SA gas        gas
+SA oil        oil
+Name: carrier, dtype: object
 </pre></div>
 </div>
 </div>
@@ -2061,6 +2048,17 @@ Downloading: https://naturalearth.s3.amazonaws.com/50m_physical/ne_50m_coastline
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bus  carrier
+MZ   hydro       1150.0
+SA   coal       35000.0
+     gas         1500.0
+     oil         2000.0
+     wind        3000.0
+Name: now, dtype: float64
+</pre></div>
+</div>
+</div>
 </div>
 <p>… which we can pass to <code class="docutils literal notranslate"><span class="pre">n.plot(bus_sizes=...)</span></code>:</p>
 <div class="cell docutils container">
@@ -2068,6 +2066,14 @@ Downloading: https://naturalearth.s3.amazonaws.com/50m_physical/ne_50m_coastline
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">margin</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">bus_sizes</span><span class="o">=</span><span class="n">s</span> <span class="o">/</span> <span class="mi">3000</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;nodes&#39;: {&#39;Bus&#39;: &lt;matplotlib.collections.PatchCollection at 0x7f60cafe5590&gt;},
+ &#39;branches&#39;: {&#39;Line&#39;: &lt;matplotlib.collections.LineCollection at 0x7f60cafe56d0&gt;},
+ &#39;flows&#39;: {}}
+</pre></div>
+</div>
+<img alt="_images/34c47951399b64a7c39fb53ef76538f337c9edb8bf11dc7899916bd0f37569be.png" src="_images/34c47951399b64a7c39fb53ef76538f337c9edb8bf11dc7899916bd0f37569be.png" />
 </div>
 </div>
 <p><strong>How does this magic work?</strong> The plotting function will look up the colors specified in <code class="docutils literal notranslate"><span class="pre">n.carriers</span></code> for each carrier and match it with the second index-level of <code class="docutils literal notranslate"><span class="pre">s</span></code>.</p>
@@ -2088,13 +2094,159 @@ Downloading: https://naturalearth.s3.amazonaws.com/50m_physical/ne_50m_coastline
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>bus0</th>
+      <th>bus1</th>
+      <th>type</th>
+      <th>x</th>
+      <th>r</th>
+      <th>g</th>
+      <th>b</th>
+      <th>s_nom</th>
+      <th>s_nom_mod</th>
+      <th>s_nom_extendable</th>
+      <th>...</th>
+      <th>v_ang_max</th>
+      <th>sub_network</th>
+      <th>x_pu</th>
+      <th>r_pu</th>
+      <th>g_pu</th>
+      <th>b_pu</th>
+      <th>x_pu_eff</th>
+      <th>r_pu_eff</th>
+      <th>s_nom_opt</th>
+      <th>v_nom</th>
+    </tr>
+    <tr>
+      <th>name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>SA-MZ</th>
+      <td>SA</td>
+      <td>MZ</td>
+      <td></td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>100.0</td>
+      <td>0.0</td>
+      <td>False</td>
+      <td>...</td>
+      <td>inf</td>
+      <td>0</td>
+      <td>0.000007</td>
+      <td>0.000007</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000007</td>
+      <td>0.000007</td>
+      <td>500.0</td>
+      <td>380.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>1 rows × 33 columns</p>
+</div></div></div>
 </div>
 <div class="cell tag_hide-output docutils container">
-<div class="cell_input docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="n">solver_name</span><span class="o">=</span><span class="s2">&quot;highs&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<details class="admonition hide below-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell output</p>
+<p class="expanded admonition-title">Hide code cell output</p>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.model: Solve problem using Highs solver
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.02s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.constants: Optimization successful: 
+Status: ok
+Termination condition: optimal
+Solution: 6 primals, 14 duals
+Objective: 1.45e+06
+Solver model: available
+Solver message: Optimal
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.optimization.optimize:The shadow-prices of the constraints Generator-fix-p-lower, Generator-fix-p-upper, Line-fix-s-lower, Line-fix-s-upper were not assigned to the network.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.12.0 (git hash: 755a8e0): Copyright (c) 2025 HiGHS under MIT licence terms
+LP linopy-problem-9aacfnh1 has 14 rows; 6 cols; 19 nonzeros
+Coefficient ranges:
+  Matrix  [1e+00, 1e+00]
+  Cost    [2e+01, 2e+02]
+  Bound   [0e+00, 0e+00]
+  RHS     [1e+02, 4e+04]
+Presolving model
+1 rows, 2 cols, 2 nonzeros  0s
+0 rows, 0 cols, 0 nonzeros  0s
+Presolve reductions: rows 0(-14); columns 0(-6); nonzeros 0(-19) - Reduced to empty
+Performed postsolve
+Solving the original LP from the solution after postsolve
+
+Model name          : linopy-problem-9aacfnh1
+Model status        : Optimal
+Objective value     :  1.4503567697e+06
+P-D objective error :  1.6053330343e-16
+HiGHS run time      :          0.00
+Writing the solution to /tmp/linopy-solve-s_9ugbh5.sol
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
+</pre></div>
+</div>
+</div>
+</details>
 </div>
 <p>You can see that the production of the hydro power plant was reduced and that of the gas power plant increased owing to the reduced transmission capacity.</p>
 <div class="cell docutils container">
@@ -2103,6 +2255,52 @@ Downloading: https://naturalearth.s3.amazonaws.com/50m_physical/ne_50m_coastline
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>name</th>
+      <th>MZ hydro</th>
+      <th>SA coal</th>
+      <th>SA wind</th>
+      <th>SA gas</th>
+      <th>SA oil</th>
+    </tr>
+    <tr>
+      <th>snapshot</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>now</th>
+      <td>750.0</td>
+      <td>35000.0</td>
+      <td>3000.0</td>
+      <td>1900.0</td>
+      <td>2000.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 <section id="add-a-global-constraints-for-emission-limits">
@@ -2125,6 +2323,52 @@ Downloading: https://naturalearth.s3.amazonaws.com/50m_physical/ne_50m_coastline
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>name</th>
+      <th>MZ hydro</th>
+      <th>SA coal</th>
+      <th>SA wind</th>
+      <th>SA gas</th>
+      <th>SA oil</th>
+    </tr>
+    <tr>
+      <th>snapshot</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>now</th>
+      <td>0.0</td>
+      <td>36060.606061</td>
+      <td>0.0</td>
+      <td>655.172414</td>
+      <td>1485.714286</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Summed up, we get total emissions in tonnes:</p>
 <div class="cell docutils container">
@@ -2133,10 +2377,38 @@ Downloading: https://naturalearth.s3.amazonaws.com/50m_physical/ne_50m_coastline
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(38201.49276011344)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">.</span><span class="n">model</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Linopy LP model
+===============
+
+Variables:
+----------
+ * Generator-p (snapshot, name)
+ * Line-s (snapshot, name)
+
+Constraints:
+------------
+ * Generator-fix-p-lower (snapshot, name)
+ * Generator-fix-p-upper (snapshot, name)
+ * Line-fix-s-lower (snapshot, name)
+ * Line-fix-s-upper (snapshot, name)
+ * Bus-nodal_balance (name, snapshot)
+
+Status:
+-------
+ok
 </pre></div>
 </div>
 </div>
@@ -2161,6 +2433,30 @@ Downloading: https://naturalearth.s3.amazonaws.com/50m_physical/ne_50m_coastline
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Linopy LP model
+===============
+
+Variables:
+----------
+ * Generator-p (snapshot, name)
+ * Line-s (snapshot, name)
+
+Constraints:
+------------
+ * Generator-fix-p-lower (snapshot, name)
+ * Generator-fix-p-upper (snapshot, name)
+ * Line-fix-s-lower (snapshot, name)
+ * Line-fix-s-upper (snapshot, name)
+ * Bus-nodal_balance (name, snapshot)
+ * GlobalConstraint-emission_limit
+
+Status:
+-------
+initialized
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2169,13 +2465,72 @@ Downloading: https://naturalearth.s3.amazonaws.com/50m_physical/ne_50m_coastline
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Constraint `GlobalConstraint-emission_limit`
+--------------------------------------------
++1.03 Generator-p[now, SA coal] + 0.3448 Generator-p[now, SA gas] + 0.7429 Generator-p[now, SA oil] ≤ 34381.3434841021
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell tag_hide-output docutils container">
-<div class="cell_input docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="n">solver_name</span><span class="o">=</span><span class="s2">&quot;highs&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<details class="admonition hide below-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell output</p>
+<p class="expanded admonition-title">Hide code cell output</p>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.model: Solve problem using Highs solver
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.02s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.constants: Optimization successful: 
+Status: ok
+Termination condition: optimal
+Solution: 6 primals, 15 duals
+Objective: 2.21e+06
+Solver model: available
+Solver message: Optimal
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.optimization.optimize:The shadow-prices of the constraints Generator-fix-p-lower, Generator-fix-p-upper, Line-fix-s-lower, Line-fix-s-upper were not assigned to the network.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.12.0 (git hash: 755a8e0): Copyright (c) 2025 HiGHS under MIT licence terms
+LP linopy-problem-vevoaaqm has 15 rows; 6 cols; 22 nonzeros
+Coefficient ranges:
+  Matrix  [3e-01, 1e+00]
+  Cost    [2e+01, 2e+02]
+  Bound   [0e+00, 0e+00]
+  RHS     [1e+02, 4e+04]
+Presolving model
+2 rows, 3 cols, 6 nonzeros  0s
+1 rows, 2 cols, 2 nonzeros  0s
+0 rows, 0 cols, 0 nonzeros  0s
+Presolve reductions: rows 0(-15); columns 0(-6); nonzeros 0(-22) - Reduced to empty
+Performed postsolve
+Solving the original LP from the solution after postsolve
+
+Model name          : linopy-problem-vevoaaqm
+Model status        : Optimal
+Objective value     :  2.2123131990e+06
+P-D objective error :  2.1048610218e-16
+HiGHS run time      :          0.00
+Writing the solution to /tmp/linopy-solve-73z64mxs.sol
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
+</pre></div>
+</div>
+</div>
+</details>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2183,6 +2538,52 @@ Downloading: https://naturalearth.s3.amazonaws.com/50m_physical/ne_50m_coastline
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>name</th>
+      <th>MZ hydro</th>
+      <th>SA coal</th>
+      <th>SA wind</th>
+      <th>SA gas</th>
+      <th>SA oil</th>
+    </tr>
+    <tr>
+      <th>snapshot</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>now</th>
+      <td>750.0</td>
+      <td>30156.761529</td>
+      <td>3000.0</td>
+      <td>8000.0</td>
+      <td>743.238471</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2190,10 +2591,63 @@ Downloading: https://naturalearth.s3.amazonaws.com/50m_physical/ne_50m_coastline
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>name</th>
+      <th>MZ hydro</th>
+      <th>SA coal</th>
+      <th>SA wind</th>
+      <th>SA gas</th>
+      <th>SA oil</th>
+    </tr>
+    <tr>
+      <th>snapshot</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>now</th>
+      <td>0.625</td>
+      <td>0.861622</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.371619</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">.</span><span class="n">global_constraints</span><span class="o">.</span><span class="n">mu</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>name
+emission_limit   -392.771084
+Name: mu, dtype: float64
 </pre></div>
 </div>
 </div>
@@ -2207,11 +2661,53 @@ Downloading: https://naturalearth.s3.amazonaws.com/50m_physical/ne_50m_coastline
 </div>
 </div>
 <div class="cell tag_hide-output docutils container">
-<div class="cell_input docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="n">solver_name</span><span class="o">=</span><span class="s2">&quot;highs&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<details class="admonition hide below-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell output</p>
+<p class="expanded admonition-title">Hide code cell output</p>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.model: Solve problem using Highs solver
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.02s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:linopy.constants:Optimization potentially failed: 
+Status: warning
+Termination condition: infeasible
+Solution: 0 primals, 0 duals
+Objective: nan
+Solver model: available
+Solver message: Infeasible
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.12.0 (git hash: 755a8e0): Copyright (c) 2025 HiGHS under MIT licence terms
+LP linopy-problem-j438d5q5 has 15 rows; 6 cols; 22 nonzeros
+Coefficient ranges:
+  Matrix  [3e-01, 1e+00]
+  Cost    [2e+01, 2e+02]
+  Bound   [0e+00, 0e+00]
+  RHS     [8e-01, 4e+04]
+Presolving model
+Problem status detected on presolve: Infeasible
+Model name          : linopy-problem-j438d5q5
+Model status        : Infeasible
+Objective value     :  0.0000000000e+00
+HiGHS run time      :          0.00
+Writing the solution to /tmp/linopy-solve-quwjupde.sol
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;warning&#39;, &#39;infeasible&#39;)
+</pre></div>
+</div>
+</div>
+</details>
 </div>
 <p>No! Without any additional capacities, we have exhausted our options to reduce CO2 in that hour. The optimiser tells us that the problem is <em>infeasible</em>.</p>
 </section>
@@ -2221,7 +2717,15 @@ Downloading: https://naturalearth.s3.amazonaws.com/50m_physical/ne_50m_coastline
 <p><a class="reference external" href="https://www.scigrid.de/pages/general-information.html">SciGRID</a> is a project that provides an open reference model of the European transmission network. The network comprises time series for loads and the availability of renewable generation at an hourly resolution for January 1, 2011 as well as approximate generation capacities in 2014. This dataset is a little out of date and only intended to demonstrate the capabilities of PyPSA.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="n">pypsa</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">scigrid_de</span><span class="p">(</span><span class="n">from_master</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="n">pypsa</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">scigrid_de</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.network.io:Retrieving network data from https://github.com/PyPSA/PyPSA/raw/v1.0.2/examples/networks/scigrid-de/scigrid-de.nc.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.network.io:Imported network &#39;SciGrid-DE&#39; has buses, carriers, generators, lines, loads, storage_units, transformers
 </pre></div>
 </div>
 </div>
@@ -2231,6 +2735,15 @@ Downloading: https://naturalearth.s3.amazonaws.com/50m_physical/ne_50m_coastline
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;nodes&#39;: {&#39;Bus&#39;: &lt;matplotlib.collections.PatchCollection at 0x7f60c3f091d0&gt;},
+ &#39;branches&#39;: {&#39;Line&#39;: &lt;matplotlib.collections.LineCollection at 0x7f60c3f09310&gt;,
+  &#39;Transformer&#39;: &lt;matplotlib.collections.LineCollection at 0x7f60c3f09450&gt;},
+ &#39;flows&#39;: {}}
+</pre></div>
+</div>
+<img alt="_images/4d72114eccd853ae926538998673010ce0a68bfefe6855eb97173989950de763.png" src="_images/4d72114eccd853ae926538998673010ce0a68bfefe6855eb97173989950de763.png" />
 </div>
 </div>
 <p>There are some infeasibilities without allowing extension. Moreover, to approximate so-called <span class="math notranslate nohighlight">\(N-1\)</span> security, we don’t allow any line to be loaded above 70% of their thermal rating. <span class="math notranslate nohighlight">\(N-1\)</span> security is a constraint that states that no single transmission line may be overloaded by the failure of another transmission line (e.g. through a tripped connection).</p>
@@ -2249,13 +2762,1344 @@ Downloading: https://naturalearth.s3.amazonaws.com/50m_physical/ne_50m_coastline
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DatetimeIndex([&#39;2011-01-01 00:00:00&#39;, &#39;2011-01-01 01:00:00&#39;,
+               &#39;2011-01-01 02:00:00&#39;, &#39;2011-01-01 03:00:00&#39;,
+               &#39;2011-01-01 04:00:00&#39;, &#39;2011-01-01 05:00:00&#39;,
+               &#39;2011-01-01 06:00:00&#39;, &#39;2011-01-01 07:00:00&#39;,
+               &#39;2011-01-01 08:00:00&#39;, &#39;2011-01-01 09:00:00&#39;,
+               &#39;2011-01-01 10:00:00&#39;, &#39;2011-01-01 11:00:00&#39;,
+               &#39;2011-01-01 12:00:00&#39;, &#39;2011-01-01 13:00:00&#39;,
+               &#39;2011-01-01 14:00:00&#39;, &#39;2011-01-01 15:00:00&#39;,
+               &#39;2011-01-01 16:00:00&#39;, &#39;2011-01-01 17:00:00&#39;,
+               &#39;2011-01-01 18:00:00&#39;, &#39;2011-01-01 19:00:00&#39;,
+               &#39;2011-01-01 20:00:00&#39;, &#39;2011-01-01 21:00:00&#39;,
+               &#39;2011-01-01 22:00:00&#39;, &#39;2011-01-01 23:00:00&#39;],
+              dtype=&#39;datetime64[ns]&#39;, name=&#39;snapshot&#39;, freq=None)
+</pre></div>
+</div>
+</div>
 </div>
 <p>This index will match with any time-varying attributes of components:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">.</span><span class="n">loads_t</span><span class="o">.</span><span class="n">p_set</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>name</th>
+      <th>1</th>
+      <th>3</th>
+      <th>4</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>11</th>
+      <th>14</th>
+      <th>16</th>
+      <th>...</th>
+      <th>382_220kV</th>
+      <th>384_220kV</th>
+      <th>385_220kV</th>
+      <th>391_220kV</th>
+      <th>403_220kV</th>
+      <th>404_220kV</th>
+      <th>413_220kV</th>
+      <th>421_220kV</th>
+      <th>450_220kV</th>
+      <th>458_220kV</th>
+    </tr>
+    <tr>
+      <th>snapshot</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2011-01-01 00:00:00</th>
+      <td>231.716206</td>
+      <td>40.613618</td>
+      <td>66.790442</td>
+      <td>196.124424</td>
+      <td>147.804142</td>
+      <td>123.671946</td>
+      <td>83.637404</td>
+      <td>73.280624</td>
+      <td>175.260369</td>
+      <td>298.900165</td>
+      <td>...</td>
+      <td>202.010114</td>
+      <td>222.695091</td>
+      <td>212.621816</td>
+      <td>77.570241</td>
+      <td>16.148970</td>
+      <td>0.092794</td>
+      <td>58.427056</td>
+      <td>67.013686</td>
+      <td>38.449243</td>
+      <td>66.752618</td>
+    </tr>
+    <tr>
+      <th>2011-01-01 01:00:00</th>
+      <td>221.822547</td>
+      <td>38.879526</td>
+      <td>63.938670</td>
+      <td>187.750439</td>
+      <td>141.493303</td>
+      <td>118.391487</td>
+      <td>80.066312</td>
+      <td>70.151738</td>
+      <td>167.777223</td>
+      <td>286.137932</td>
+      <td>...</td>
+      <td>193.384825</td>
+      <td>213.186609</td>
+      <td>203.543436</td>
+      <td>74.258201</td>
+      <td>15.459452</td>
+      <td>0.088831</td>
+      <td>55.932378</td>
+      <td>64.152382</td>
+      <td>36.807564</td>
+      <td>63.902460</td>
+    </tr>
+    <tr>
+      <th>2011-01-01 02:00:00</th>
+      <td>213.127360</td>
+      <td>37.355494</td>
+      <td>61.432348</td>
+      <td>180.390839</td>
+      <td>135.946929</td>
+      <td>113.750678</td>
+      <td>76.927805</td>
+      <td>67.401871</td>
+      <td>161.200550</td>
+      <td>274.921657</td>
+      <td>...</td>
+      <td>185.804364</td>
+      <td>204.829941</td>
+      <td>195.564769</td>
+      <td>71.347365</td>
+      <td>14.853460</td>
+      <td>0.085349</td>
+      <td>53.739893</td>
+      <td>61.637683</td>
+      <td>35.364750</td>
+      <td>61.397558</td>
+    </tr>
+    <tr>
+      <th>2011-01-01 03:00:00</th>
+      <td>207.997501</td>
+      <td>36.456367</td>
+      <td>59.953705</td>
+      <td>176.048930</td>
+      <td>132.674761</td>
+      <td>111.012761</td>
+      <td>75.076195</td>
+      <td>65.779545</td>
+      <td>157.320541</td>
+      <td>268.304442</td>
+      <td>...</td>
+      <td>181.332154</td>
+      <td>199.899796</td>
+      <td>190.857632</td>
+      <td>69.630073</td>
+      <td>14.495945</td>
+      <td>0.083295</td>
+      <td>52.446403</td>
+      <td>60.154097</td>
+      <td>34.513540</td>
+      <td>59.919752</td>
+    </tr>
+    <tr>
+      <th>2011-01-01 04:00:00</th>
+      <td>200.194899</td>
+      <td>35.088781</td>
+      <td>57.704664</td>
+      <td>169.444814</td>
+      <td>127.697738</td>
+      <td>106.848344</td>
+      <td>72.259865</td>
+      <td>63.311960</td>
+      <td>151.418982</td>
+      <td>258.239549</td>
+      <td>...</td>
+      <td>174.529848</td>
+      <td>192.400963</td>
+      <td>183.697997</td>
+      <td>67.018043</td>
+      <td>13.952159</td>
+      <td>0.080170</td>
+      <td>50.478984</td>
+      <td>57.897539</td>
+      <td>33.218835</td>
+      <td>57.671985</td>
+    </tr>
+    <tr>
+      <th>2011-01-01 05:00:00</th>
+      <td>185.808225</td>
+      <td>32.567184</td>
+      <td>53.557814</td>
+      <td>157.267944</td>
+      <td>118.520953</td>
+      <td>99.169865</td>
+      <td>67.067030</td>
+      <td>58.762151</td>
+      <td>140.537508</td>
+      <td>239.681593</td>
+      <td>...</td>
+      <td>161.987551</td>
+      <td>178.574388</td>
+      <td>170.496846</td>
+      <td>62.201903</td>
+      <td>12.949511</td>
+      <td>0.074409</td>
+      <td>46.851395</td>
+      <td>53.736829</td>
+      <td>30.831619</td>
+      <td>53.527484</td>
+    </tr>
+    <tr>
+      <th>2011-01-01 06:00:00</th>
+      <td>185.913530</td>
+      <td>32.585641</td>
+      <td>53.588168</td>
+      <td>157.357074</td>
+      <td>118.588123</td>
+      <td>99.226069</td>
+      <td>67.105039</td>
+      <td>58.795454</td>
+      <td>140.617157</td>
+      <td>239.817430</td>
+      <td>...</td>
+      <td>162.079356</td>
+      <td>178.675593</td>
+      <td>170.593474</td>
+      <td>62.237155</td>
+      <td>12.956850</td>
+      <td>0.074451</td>
+      <td>46.877948</td>
+      <td>53.767284</td>
+      <td>30.849092</td>
+      <td>53.557820</td>
+    </tr>
+    <tr>
+      <th>2011-01-01 07:00:00</th>
+      <td>189.017522</td>
+      <td>33.129687</td>
+      <td>54.482870</td>
+      <td>159.984290</td>
+      <td>120.568057</td>
+      <td>100.882736</td>
+      <td>68.225418</td>
+      <td>59.777096</td>
+      <td>142.964885</td>
+      <td>243.821395</td>
+      <td>...</td>
+      <td>164.785415</td>
+      <td>181.658741</td>
+      <td>173.441683</td>
+      <td>63.276260</td>
+      <td>13.173176</td>
+      <td>0.075694</td>
+      <td>47.660617</td>
+      <td>54.664976</td>
+      <td>31.364145</td>
+      <td>54.452015</td>
+    </tr>
+    <tr>
+      <th>2011-01-01 08:00:00</th>
+      <td>200.711395</td>
+      <td>35.179309</td>
+      <td>57.853540</td>
+      <td>169.881976</td>
+      <td>128.027194</td>
+      <td>107.124009</td>
+      <td>72.446293</td>
+      <td>63.475302</td>
+      <td>151.809638</td>
+      <td>258.905798</td>
+      <td>...</td>
+      <td>174.980129</td>
+      <td>192.897351</td>
+      <td>184.171932</td>
+      <td>67.190947</td>
+      <td>13.988155</td>
+      <td>0.080377</td>
+      <td>50.609218</td>
+      <td>58.046913</td>
+      <td>33.304538</td>
+      <td>57.820777</td>
+    </tr>
+    <tr>
+      <th>2011-01-01 09:00:00</th>
+      <td>214.406064</td>
+      <td>37.579616</td>
+      <td>61.800925</td>
+      <td>181.473133</td>
+      <td>136.762573</td>
+      <td>114.433149</td>
+      <td>77.389351</td>
+      <td>67.806263</td>
+      <td>162.167708</td>
+      <td>276.571109</td>
+      <td>...</td>
+      <td>186.919137</td>
+      <td>206.058863</td>
+      <td>196.738103</td>
+      <td>71.775429</td>
+      <td>14.942576</td>
+      <td>0.085861</td>
+      <td>54.062318</td>
+      <td>62.007491</td>
+      <td>35.576929</td>
+      <td>61.765926</td>
+    </tr>
+    <tr>
+      <th>2011-01-01 10:00:00</th>
+      <td>229.464684</td>
+      <td>40.218987</td>
+      <td>66.141458</td>
+      <td>194.218738</td>
+      <td>146.367971</td>
+      <td>122.470260</td>
+      <td>82.824723</td>
+      <td>72.568576</td>
+      <td>173.557413</td>
+      <td>295.995836</td>
+      <td>...</td>
+      <td>200.047237</td>
+      <td>220.531225</td>
+      <td>210.555829</td>
+      <td>76.816513</td>
+      <td>15.992055</td>
+      <td>0.091892</td>
+      <td>57.859337</td>
+      <td>66.362533</td>
+      <td>38.075643</td>
+      <td>66.104001</td>
+    </tr>
+    <tr>
+      <th>2011-01-01 11:00:00</th>
+      <td>235.166199</td>
+      <td>41.218309</td>
+      <td>67.784877</td>
+      <td>199.044496</td>
+      <td>150.004780</td>
+      <td>125.513282</td>
+      <td>84.882671</td>
+      <td>74.371690</td>
+      <td>177.869799</td>
+      <td>303.350453</td>
+      <td>...</td>
+      <td>205.017817</td>
+      <td>226.010770</td>
+      <td>215.787515</td>
+      <td>78.725175</td>
+      <td>16.389410</td>
+      <td>0.094175</td>
+      <td>59.296969</td>
+      <td>68.011444</td>
+      <td>39.021709</td>
+      <td>67.746489</td>
+    </tr>
+    <tr>
+      <th>2011-01-01 12:00:00</th>
+      <td>232.057194</td>
+      <td>40.673384</td>
+      <td>66.888729</td>
+      <td>196.413036</td>
+      <td>148.021647</td>
+      <td>123.853939</td>
+      <td>83.760483</td>
+      <td>73.388462</td>
+      <td>175.518278</td>
+      <td>299.340019</td>
+      <td>...</td>
+      <td>202.307387</td>
+      <td>223.022803</td>
+      <td>212.934705</td>
+      <td>77.684392</td>
+      <td>16.172734</td>
+      <td>0.092930</td>
+      <td>58.513036</td>
+      <td>67.112302</td>
+      <td>38.505824</td>
+      <td>66.850849</td>
+    </tr>
+    <tr>
+      <th>2011-01-01 13:00:00</th>
+      <td>229.539902</td>
+      <td>40.232171</td>
+      <td>66.163139</td>
+      <td>194.282402</td>
+      <td>146.415950</td>
+      <td>122.510406</td>
+      <td>82.851873</td>
+      <td>72.592364</td>
+      <td>173.614305</td>
+      <td>296.092862</td>
+      <td>...</td>
+      <td>200.112812</td>
+      <td>220.603514</td>
+      <td>210.624848</td>
+      <td>76.841693</td>
+      <td>15.997297</td>
+      <td>0.091922</td>
+      <td>57.878303</td>
+      <td>66.384286</td>
+      <td>38.088124</td>
+      <td>66.125670</td>
+    </tr>
+    <tr>
+      <th>2011-01-01 14:00:00</th>
+      <td>229.073551</td>
+      <td>40.150432</td>
+      <td>66.028717</td>
+      <td>193.887683</td>
+      <td>146.118480</td>
+      <td>122.261504</td>
+      <td>82.683545</td>
+      <td>72.444880</td>
+      <td>173.261577</td>
+      <td>295.491297</td>
+      <td>...</td>
+      <td>199.706248</td>
+      <td>220.155319</td>
+      <td>210.196927</td>
+      <td>76.685576</td>
+      <td>15.964796</td>
+      <td>0.091735</td>
+      <td>57.760713</td>
+      <td>66.249415</td>
+      <td>38.010741</td>
+      <td>65.991324</td>
+    </tr>
+    <tr>
+      <th>2011-01-01 15:00:00</th>
+      <td>237.036617</td>
+      <td>41.546143</td>
+      <td>68.324011</td>
+      <td>200.627617</td>
+      <td>151.197858</td>
+      <td>126.511565</td>
+      <td>85.557794</td>
+      <td>74.963212</td>
+      <td>179.284504</td>
+      <td>305.763181</td>
+      <td>...</td>
+      <td>206.648447</td>
+      <td>227.808369</td>
+      <td>217.503803</td>
+      <td>79.351324</td>
+      <td>16.519765</td>
+      <td>0.094924</td>
+      <td>59.768594</td>
+      <td>68.552380</td>
+      <td>39.332072</td>
+      <td>68.285317</td>
+    </tr>
+    <tr>
+      <th>2011-01-01 16:00:00</th>
+      <td>257.731564</td>
+      <td>45.173411</td>
+      <td>74.289172</td>
+      <td>218.143804</td>
+      <td>164.398483</td>
+      <td>137.556905</td>
+      <td>93.027585</td>
+      <td>81.508023</td>
+      <td>194.937289</td>
+      <td>332.458435</td>
+      <td>...</td>
+      <td>224.690294</td>
+      <td>247.697626</td>
+      <td>236.493399</td>
+      <td>86.279246</td>
+      <td>17.962055</td>
+      <td>0.103212</td>
+      <td>64.986808</td>
+      <td>74.537480</td>
+      <td>42.766036</td>
+      <td>74.247101</td>
+    </tr>
+    <tr>
+      <th>2011-01-01 17:00:00</th>
+      <td>261.582719</td>
+      <td>45.848415</td>
+      <td>75.399239</td>
+      <td>221.403419</td>
+      <td>166.855009</td>
+      <td>139.612350</td>
+      <td>94.417650</td>
+      <td>82.725957</td>
+      <td>197.850141</td>
+      <td>337.426197</td>
+      <td>...</td>
+      <td>228.047730</td>
+      <td>251.398849</td>
+      <td>240.027203</td>
+      <td>87.568475</td>
+      <td>18.230453</td>
+      <td>0.104754</td>
+      <td>65.957874</td>
+      <td>75.651257</td>
+      <td>43.405068</td>
+      <td>75.356539</td>
+    </tr>
+    <tr>
+      <th>2011-01-01 18:00:00</th>
+      <td>257.460779</td>
+      <td>45.125950</td>
+      <td>74.211121</td>
+      <td>217.914612</td>
+      <td>164.225759</td>
+      <td>137.412381</td>
+      <td>92.929846</td>
+      <td>81.422387</td>
+      <td>194.732480</td>
+      <td>332.109139</td>
+      <td>...</td>
+      <td>224.454224</td>
+      <td>247.437383</td>
+      <td>236.244928</td>
+      <td>86.188598</td>
+      <td>17.943184</td>
+      <td>0.103103</td>
+      <td>64.918530</td>
+      <td>74.459168</td>
+      <td>42.721104</td>
+      <td>74.169094</td>
+    </tr>
+    <tr>
+      <th>2011-01-01 19:00:00</th>
+      <td>248.399532</td>
+      <td>43.537757</td>
+      <td>71.599285</td>
+      <td>210.245179</td>
+      <td>158.445887</td>
+      <td>132.576198</td>
+      <td>89.659211</td>
+      <td>78.556752</td>
+      <td>187.878934</td>
+      <td>320.420667</td>
+      <td>...</td>
+      <td>216.554632</td>
+      <td>238.728906</td>
+      <td>227.930366</td>
+      <td>83.155218</td>
+      <td>17.311679</td>
+      <td>0.099475</td>
+      <td>62.633743</td>
+      <td>71.838602</td>
+      <td>41.217549</td>
+      <td>71.558737</td>
+    </tr>
+    <tr>
+      <th>2011-01-01 20:00:00</th>
+      <td>245.074902</td>
+      <td>42.955038</td>
+      <td>70.640985</td>
+      <td>207.431214</td>
+      <td>156.325215</td>
+      <td>130.801771</td>
+      <td>88.459193</td>
+      <td>77.505333</td>
+      <td>185.364324</td>
+      <td>316.132091</td>
+      <td>...</td>
+      <td>213.656220</td>
+      <td>235.533709</td>
+      <td>224.879699</td>
+      <td>82.042252</td>
+      <td>17.079976</td>
+      <td>0.098143</td>
+      <td>61.795440</td>
+      <td>70.877099</td>
+      <td>40.665885</td>
+      <td>70.600980</td>
+    </tr>
+    <tr>
+      <th>2011-01-01 21:00:00</th>
+      <td>248.043501</td>
+      <td>43.475354</td>
+      <td>71.496661</td>
+      <td>209.943835</td>
+      <td>158.218787</td>
+      <td>132.386176</td>
+      <td>89.530702</td>
+      <td>78.444157</td>
+      <td>187.609647</td>
+      <td>319.961408</td>
+      <td>...</td>
+      <td>216.244244</td>
+      <td>238.386736</td>
+      <td>227.603673</td>
+      <td>83.036032</td>
+      <td>17.286866</td>
+      <td>0.099332</td>
+      <td>62.543970</td>
+      <td>71.735635</td>
+      <td>41.158472</td>
+      <td>71.456171</td>
+    </tr>
+    <tr>
+      <th>2011-01-01 22:00:00</th>
+      <td>235.532260</td>
+      <td>41.282470</td>
+      <td>67.890391</td>
+      <td>199.354329</td>
+      <td>150.238278</td>
+      <td>125.708657</td>
+      <td>85.014800</td>
+      <td>74.487457</td>
+      <td>178.146672</td>
+      <td>303.822649</td>
+      <td>...</td>
+      <td>205.336948</td>
+      <td>226.362579</td>
+      <td>216.123411</td>
+      <td>78.847719</td>
+      <td>16.414922</td>
+      <td>0.094322</td>
+      <td>59.389271</td>
+      <td>68.117311</td>
+      <td>39.082451</td>
+      <td>67.851943</td>
+    </tr>
+    <tr>
+      <th>2011-01-01 23:00:00</th>
+      <td>220.383378</td>
+      <td>38.627278</td>
+      <td>63.523841</td>
+      <td>186.532328</td>
+      <td>140.575305</td>
+      <td>117.623371</td>
+      <td>79.546848</td>
+      <td>69.696599</td>
+      <td>166.688696</td>
+      <td>284.281490</td>
+      <td>...</td>
+      <td>192.130158</td>
+      <td>211.803470</td>
+      <td>202.222861</td>
+      <td>73.776419</td>
+      <td>15.359153</td>
+      <td>0.088255</td>
+      <td>55.569493</td>
+      <td>63.736166</td>
+      <td>36.568759</td>
+      <td>63.487866</td>
+    </tr>
+  </tbody>
+</table>
+<p>24 rows × 485 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">.</span><span class="n">loads_t</span><span class="o">.</span><span class="n">p_set</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>name</th>
+      <th>1</th>
+      <th>3</th>
+      <th>4</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>11</th>
+      <th>14</th>
+      <th>16</th>
+      <th>...</th>
+      <th>382_220kV</th>
+      <th>384_220kV</th>
+      <th>385_220kV</th>
+      <th>391_220kV</th>
+      <th>403_220kV</th>
+      <th>404_220kV</th>
+      <th>413_220kV</th>
+      <th>421_220kV</th>
+      <th>450_220kV</th>
+      <th>458_220kV</th>
+    </tr>
+    <tr>
+      <th>snapshot</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2011-01-01 00:00:00</th>
+      <td>231.716206</td>
+      <td>40.613618</td>
+      <td>66.790442</td>
+      <td>196.124424</td>
+      <td>147.804142</td>
+      <td>123.671946</td>
+      <td>83.637404</td>
+      <td>73.280624</td>
+      <td>175.260369</td>
+      <td>298.900165</td>
+      <td>...</td>
+      <td>202.010114</td>
+      <td>222.695091</td>
+      <td>212.621816</td>
+      <td>77.570241</td>
+      <td>16.148970</td>
+      <td>0.092794</td>
+      <td>58.427056</td>
+      <td>67.013686</td>
+      <td>38.449243</td>
+      <td>66.752618</td>
+    </tr>
+    <tr>
+      <th>2011-01-01 01:00:00</th>
+      <td>221.822547</td>
+      <td>38.879526</td>
+      <td>63.938670</td>
+      <td>187.750439</td>
+      <td>141.493303</td>
+      <td>118.391487</td>
+      <td>80.066312</td>
+      <td>70.151738</td>
+      <td>167.777223</td>
+      <td>286.137932</td>
+      <td>...</td>
+      <td>193.384825</td>
+      <td>213.186609</td>
+      <td>203.543436</td>
+      <td>74.258201</td>
+      <td>15.459452</td>
+      <td>0.088831</td>
+      <td>55.932378</td>
+      <td>64.152382</td>
+      <td>36.807564</td>
+      <td>63.902460</td>
+    </tr>
+    <tr>
+      <th>2011-01-01 02:00:00</th>
+      <td>213.127360</td>
+      <td>37.355494</td>
+      <td>61.432348</td>
+      <td>180.390839</td>
+      <td>135.946929</td>
+      <td>113.750678</td>
+      <td>76.927805</td>
+      <td>67.401871</td>
+      <td>161.200550</td>
+      <td>274.921657</td>
+      <td>...</td>
+      <td>185.804364</td>
+      <td>204.829941</td>
+      <td>195.564769</td>
+      <td>71.347365</td>
+      <td>14.853460</td>
+      <td>0.085349</td>
+      <td>53.739893</td>
+      <td>61.637683</td>
+      <td>35.364750</td>
+      <td>61.397558</td>
+    </tr>
+    <tr>
+      <th>2011-01-01 03:00:00</th>
+      <td>207.997501</td>
+      <td>36.456367</td>
+      <td>59.953705</td>
+      <td>176.048930</td>
+      <td>132.674761</td>
+      <td>111.012761</td>
+      <td>75.076195</td>
+      <td>65.779545</td>
+      <td>157.320541</td>
+      <td>268.304442</td>
+      <td>...</td>
+      <td>181.332154</td>
+      <td>199.899796</td>
+      <td>190.857632</td>
+      <td>69.630073</td>
+      <td>14.495945</td>
+      <td>0.083295</td>
+      <td>52.446403</td>
+      <td>60.154097</td>
+      <td>34.513540</td>
+      <td>59.919752</td>
+    </tr>
+    <tr>
+      <th>2011-01-01 04:00:00</th>
+      <td>200.194899</td>
+      <td>35.088781</td>
+      <td>57.704664</td>
+      <td>169.444814</td>
+      <td>127.697738</td>
+      <td>106.848344</td>
+      <td>72.259865</td>
+      <td>63.311960</td>
+      <td>151.418982</td>
+      <td>258.239549</td>
+      <td>...</td>
+      <td>174.529848</td>
+      <td>192.400963</td>
+      <td>183.697997</td>
+      <td>67.018043</td>
+      <td>13.952159</td>
+      <td>0.080170</td>
+      <td>50.478984</td>
+      <td>57.897539</td>
+      <td>33.218835</td>
+      <td>57.671985</td>
+    </tr>
+    <tr>
+      <th>2011-01-01 05:00:00</th>
+      <td>185.808225</td>
+      <td>32.567184</td>
+      <td>53.557814</td>
+      <td>157.267944</td>
+      <td>118.520953</td>
+      <td>99.169865</td>
+      <td>67.067030</td>
+      <td>58.762151</td>
+      <td>140.537508</td>
+      <td>239.681593</td>
+      <td>...</td>
+      <td>161.987551</td>
+      <td>178.574388</td>
+      <td>170.496846</td>
+      <td>62.201903</td>
+      <td>12.949511</td>
+      <td>0.074409</td>
+      <td>46.851395</td>
+      <td>53.736829</td>
+      <td>30.831619</td>
+      <td>53.527484</td>
+    </tr>
+    <tr>
+      <th>2011-01-01 06:00:00</th>
+      <td>185.913530</td>
+      <td>32.585641</td>
+      <td>53.588168</td>
+      <td>157.357074</td>
+      <td>118.588123</td>
+      <td>99.226069</td>
+      <td>67.105039</td>
+      <td>58.795454</td>
+      <td>140.617157</td>
+      <td>239.817430</td>
+      <td>...</td>
+      <td>162.079356</td>
+      <td>178.675593</td>
+      <td>170.593474</td>
+      <td>62.237155</td>
+      <td>12.956850</td>
+      <td>0.074451</td>
+      <td>46.877948</td>
+      <td>53.767284</td>
+      <td>30.849092</td>
+      <td>53.557820</td>
+    </tr>
+    <tr>
+      <th>2011-01-01 07:00:00</th>
+      <td>189.017522</td>
+      <td>33.129687</td>
+      <td>54.482870</td>
+      <td>159.984290</td>
+      <td>120.568057</td>
+      <td>100.882736</td>
+      <td>68.225418</td>
+      <td>59.777096</td>
+      <td>142.964885</td>
+      <td>243.821395</td>
+      <td>...</td>
+      <td>164.785415</td>
+      <td>181.658741</td>
+      <td>173.441683</td>
+      <td>63.276260</td>
+      <td>13.173176</td>
+      <td>0.075694</td>
+      <td>47.660617</td>
+      <td>54.664976</td>
+      <td>31.364145</td>
+      <td>54.452015</td>
+    </tr>
+    <tr>
+      <th>2011-01-01 08:00:00</th>
+      <td>200.711395</td>
+      <td>35.179309</td>
+      <td>57.853540</td>
+      <td>169.881976</td>
+      <td>128.027194</td>
+      <td>107.124009</td>
+      <td>72.446293</td>
+      <td>63.475302</td>
+      <td>151.809638</td>
+      <td>258.905798</td>
+      <td>...</td>
+      <td>174.980129</td>
+      <td>192.897351</td>
+      <td>184.171932</td>
+      <td>67.190947</td>
+      <td>13.988155</td>
+      <td>0.080377</td>
+      <td>50.609218</td>
+      <td>58.046913</td>
+      <td>33.304538</td>
+      <td>57.820777</td>
+    </tr>
+    <tr>
+      <th>2011-01-01 09:00:00</th>
+      <td>214.406064</td>
+      <td>37.579616</td>
+      <td>61.800925</td>
+      <td>181.473133</td>
+      <td>136.762573</td>
+      <td>114.433149</td>
+      <td>77.389351</td>
+      <td>67.806263</td>
+      <td>162.167708</td>
+      <td>276.571109</td>
+      <td>...</td>
+      <td>186.919137</td>
+      <td>206.058863</td>
+      <td>196.738103</td>
+      <td>71.775429</td>
+      <td>14.942576</td>
+      <td>0.085861</td>
+      <td>54.062318</td>
+      <td>62.007491</td>
+      <td>35.576929</td>
+      <td>61.765926</td>
+    </tr>
+    <tr>
+      <th>2011-01-01 10:00:00</th>
+      <td>229.464684</td>
+      <td>40.218987</td>
+      <td>66.141458</td>
+      <td>194.218738</td>
+      <td>146.367971</td>
+      <td>122.470260</td>
+      <td>82.824723</td>
+      <td>72.568576</td>
+      <td>173.557413</td>
+      <td>295.995836</td>
+      <td>...</td>
+      <td>200.047237</td>
+      <td>220.531225</td>
+      <td>210.555829</td>
+      <td>76.816513</td>
+      <td>15.992055</td>
+      <td>0.091892</td>
+      <td>57.859337</td>
+      <td>66.362533</td>
+      <td>38.075643</td>
+      <td>66.104001</td>
+    </tr>
+    <tr>
+      <th>2011-01-01 11:00:00</th>
+      <td>235.166199</td>
+      <td>41.218309</td>
+      <td>67.784877</td>
+      <td>199.044496</td>
+      <td>150.004780</td>
+      <td>125.513282</td>
+      <td>84.882671</td>
+      <td>74.371690</td>
+      <td>177.869799</td>
+      <td>303.350453</td>
+      <td>...</td>
+      <td>205.017817</td>
+      <td>226.010770</td>
+      <td>215.787515</td>
+      <td>78.725175</td>
+      <td>16.389410</td>
+      <td>0.094175</td>
+      <td>59.296969</td>
+      <td>68.011444</td>
+      <td>39.021709</td>
+      <td>67.746489</td>
+    </tr>
+    <tr>
+      <th>2011-01-01 12:00:00</th>
+      <td>232.057194</td>
+      <td>40.673384</td>
+      <td>66.888729</td>
+      <td>196.413036</td>
+      <td>148.021647</td>
+      <td>123.853939</td>
+      <td>83.760483</td>
+      <td>73.388462</td>
+      <td>175.518278</td>
+      <td>299.340019</td>
+      <td>...</td>
+      <td>202.307387</td>
+      <td>223.022803</td>
+      <td>212.934705</td>
+      <td>77.684392</td>
+      <td>16.172734</td>
+      <td>0.092930</td>
+      <td>58.513036</td>
+      <td>67.112302</td>
+      <td>38.505824</td>
+      <td>66.850849</td>
+    </tr>
+    <tr>
+      <th>2011-01-01 13:00:00</th>
+      <td>229.539902</td>
+      <td>40.232171</td>
+      <td>66.163139</td>
+      <td>194.282402</td>
+      <td>146.415950</td>
+      <td>122.510406</td>
+      <td>82.851873</td>
+      <td>72.592364</td>
+      <td>173.614305</td>
+      <td>296.092862</td>
+      <td>...</td>
+      <td>200.112812</td>
+      <td>220.603514</td>
+      <td>210.624848</td>
+      <td>76.841693</td>
+      <td>15.997297</td>
+      <td>0.091922</td>
+      <td>57.878303</td>
+      <td>66.384286</td>
+      <td>38.088124</td>
+      <td>66.125670</td>
+    </tr>
+    <tr>
+      <th>2011-01-01 14:00:00</th>
+      <td>229.073551</td>
+      <td>40.150432</td>
+      <td>66.028717</td>
+      <td>193.887683</td>
+      <td>146.118480</td>
+      <td>122.261504</td>
+      <td>82.683545</td>
+      <td>72.444880</td>
+      <td>173.261577</td>
+      <td>295.491297</td>
+      <td>...</td>
+      <td>199.706248</td>
+      <td>220.155319</td>
+      <td>210.196927</td>
+      <td>76.685576</td>
+      <td>15.964796</td>
+      <td>0.091735</td>
+      <td>57.760713</td>
+      <td>66.249415</td>
+      <td>38.010741</td>
+      <td>65.991324</td>
+    </tr>
+    <tr>
+      <th>2011-01-01 15:00:00</th>
+      <td>237.036617</td>
+      <td>41.546143</td>
+      <td>68.324011</td>
+      <td>200.627617</td>
+      <td>151.197858</td>
+      <td>126.511565</td>
+      <td>85.557794</td>
+      <td>74.963212</td>
+      <td>179.284504</td>
+      <td>305.763181</td>
+      <td>...</td>
+      <td>206.648447</td>
+      <td>227.808369</td>
+      <td>217.503803</td>
+      <td>79.351324</td>
+      <td>16.519765</td>
+      <td>0.094924</td>
+      <td>59.768594</td>
+      <td>68.552380</td>
+      <td>39.332072</td>
+      <td>68.285317</td>
+    </tr>
+    <tr>
+      <th>2011-01-01 16:00:00</th>
+      <td>257.731564</td>
+      <td>45.173411</td>
+      <td>74.289172</td>
+      <td>218.143804</td>
+      <td>164.398483</td>
+      <td>137.556905</td>
+      <td>93.027585</td>
+      <td>81.508023</td>
+      <td>194.937289</td>
+      <td>332.458435</td>
+      <td>...</td>
+      <td>224.690294</td>
+      <td>247.697626</td>
+      <td>236.493399</td>
+      <td>86.279246</td>
+      <td>17.962055</td>
+      <td>0.103212</td>
+      <td>64.986808</td>
+      <td>74.537480</td>
+      <td>42.766036</td>
+      <td>74.247101</td>
+    </tr>
+    <tr>
+      <th>2011-01-01 17:00:00</th>
+      <td>261.582719</td>
+      <td>45.848415</td>
+      <td>75.399239</td>
+      <td>221.403419</td>
+      <td>166.855009</td>
+      <td>139.612350</td>
+      <td>94.417650</td>
+      <td>82.725957</td>
+      <td>197.850141</td>
+      <td>337.426197</td>
+      <td>...</td>
+      <td>228.047730</td>
+      <td>251.398849</td>
+      <td>240.027203</td>
+      <td>87.568475</td>
+      <td>18.230453</td>
+      <td>0.104754</td>
+      <td>65.957874</td>
+      <td>75.651257</td>
+      <td>43.405068</td>
+      <td>75.356539</td>
+    </tr>
+    <tr>
+      <th>2011-01-01 18:00:00</th>
+      <td>257.460779</td>
+      <td>45.125950</td>
+      <td>74.211121</td>
+      <td>217.914612</td>
+      <td>164.225759</td>
+      <td>137.412381</td>
+      <td>92.929846</td>
+      <td>81.422387</td>
+      <td>194.732480</td>
+      <td>332.109139</td>
+      <td>...</td>
+      <td>224.454224</td>
+      <td>247.437383</td>
+      <td>236.244928</td>
+      <td>86.188598</td>
+      <td>17.943184</td>
+      <td>0.103103</td>
+      <td>64.918530</td>
+      <td>74.459168</td>
+      <td>42.721104</td>
+      <td>74.169094</td>
+    </tr>
+    <tr>
+      <th>2011-01-01 19:00:00</th>
+      <td>248.399532</td>
+      <td>43.537757</td>
+      <td>71.599285</td>
+      <td>210.245179</td>
+      <td>158.445887</td>
+      <td>132.576198</td>
+      <td>89.659211</td>
+      <td>78.556752</td>
+      <td>187.878934</td>
+      <td>320.420667</td>
+      <td>...</td>
+      <td>216.554632</td>
+      <td>238.728906</td>
+      <td>227.930366</td>
+      <td>83.155218</td>
+      <td>17.311679</td>
+      <td>0.099475</td>
+      <td>62.633743</td>
+      <td>71.838602</td>
+      <td>41.217549</td>
+      <td>71.558737</td>
+    </tr>
+    <tr>
+      <th>2011-01-01 20:00:00</th>
+      <td>245.074902</td>
+      <td>42.955038</td>
+      <td>70.640985</td>
+      <td>207.431214</td>
+      <td>156.325215</td>
+      <td>130.801771</td>
+      <td>88.459193</td>
+      <td>77.505333</td>
+      <td>185.364324</td>
+      <td>316.132091</td>
+      <td>...</td>
+      <td>213.656220</td>
+      <td>235.533709</td>
+      <td>224.879699</td>
+      <td>82.042252</td>
+      <td>17.079976</td>
+      <td>0.098143</td>
+      <td>61.795440</td>
+      <td>70.877099</td>
+      <td>40.665885</td>
+      <td>70.600980</td>
+    </tr>
+    <tr>
+      <th>2011-01-01 21:00:00</th>
+      <td>248.043501</td>
+      <td>43.475354</td>
+      <td>71.496661</td>
+      <td>209.943835</td>
+      <td>158.218787</td>
+      <td>132.386176</td>
+      <td>89.530702</td>
+      <td>78.444157</td>
+      <td>187.609647</td>
+      <td>319.961408</td>
+      <td>...</td>
+      <td>216.244244</td>
+      <td>238.386736</td>
+      <td>227.603673</td>
+      <td>83.036032</td>
+      <td>17.286866</td>
+      <td>0.099332</td>
+      <td>62.543970</td>
+      <td>71.735635</td>
+      <td>41.158472</td>
+      <td>71.456171</td>
+    </tr>
+    <tr>
+      <th>2011-01-01 22:00:00</th>
+      <td>235.532260</td>
+      <td>41.282470</td>
+      <td>67.890391</td>
+      <td>199.354329</td>
+      <td>150.238278</td>
+      <td>125.708657</td>
+      <td>85.014800</td>
+      <td>74.487457</td>
+      <td>178.146672</td>
+      <td>303.822649</td>
+      <td>...</td>
+      <td>205.336948</td>
+      <td>226.362579</td>
+      <td>216.123411</td>
+      <td>78.847719</td>
+      <td>16.414922</td>
+      <td>0.094322</td>
+      <td>59.389271</td>
+      <td>68.117311</td>
+      <td>39.082451</td>
+      <td>67.851943</td>
+    </tr>
+    <tr>
+      <th>2011-01-01 23:00:00</th>
+      <td>220.383378</td>
+      <td>38.627278</td>
+      <td>63.523841</td>
+      <td>186.532328</td>
+      <td>140.575305</td>
+      <td>117.623371</td>
+      <td>79.546848</td>
+      <td>69.696599</td>
+      <td>166.688696</td>
+      <td>284.281490</td>
+      <td>...</td>
+      <td>192.130158</td>
+      <td>211.803470</td>
+      <td>202.222861</td>
+      <td>73.776419</td>
+      <td>15.359153</td>
+      <td>0.088255</td>
+      <td>55.569493</td>
+      <td>63.736166</td>
+      <td>36.568759</td>
+      <td>63.487866</td>
+    </tr>
+  </tbody>
+</table>
+<p>24 rows × 485 columns</p>
+</div></div></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">.</span><span class="n">loads_t</span><span class="o">.</span><span class="n">p_set</span><span class="p">[</span><span class="s2">&quot;382_220kV&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;MW&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;snapshot&#39;, ylabel=&#39;MW&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/60a7c766a0a2614f21bafafb23f8659d15ffb1a95289bf3b4a369162a0480ec2.png" src="_images/60a7c766a0a2614f21bafafb23f8659d15ffb1a95289bf3b4a369162a0480ec2.png" />
 </div>
 </div>
 <p>Let’s inspect capacity factor time series for renewable generators:</p>
@@ -2265,11 +4109,24 @@ Downloading: https://naturalearth.s3.amazonaws.com/50m_physical/ne_50m_coastline
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;snapshot&#39;, ylabel=&#39;p.u.&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/6422f5f9d3135cf696e6d65aba7641404de2975a7843dbef1b3061dcbf586ac3.png" src="_images/6422f5f9d3135cf696e6d65aba7641404de2975a7843dbef1b3061dcbf586ac3.png" />
+</div>
 </div>
 <p>We can also inspect the total power plant capacities per technology…</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">.</span><span class="n">generators</span><span class="o">.</span><span class="n">carrier</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;Gas&#39;, &#39;Hard Coal&#39;, &#39;Run of River&#39;, &#39;Waste&#39;, &#39;Brown Coal&#39;, &#39;Oil&#39;,
+       &#39;Storage Hydro&#39;, &#39;Other&#39;, &#39;Multiple&#39;, &#39;Nuclear&#39;, &#39;Geothermal&#39;,
+       &#39;Wind Offshore&#39;, &#39;Wind Onshore&#39;, &#39;Solar&#39;], dtype=object)
 </pre></div>
 </div>
 </div>
@@ -2280,6 +4137,12 @@ Downloading: https://naturalearth.s3.amazonaws.com/50m_physical/ne_50m_coastline
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;GW&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;GW&#39;)
+</pre></div>
+</div>
+<img alt="_images/9f38dcc4ae004bdec9915500aa719ce0d1c4f81534784366ef157d3b702ed350.png" src="_images/9f38dcc4ae004bdec9915500aa719ce0d1c4f81534784366ef157d3b702ed350.png" />
 </div>
 </div>
 <p>… and plot the regional distribution of loads…</p>
@@ -2301,6 +4164,15 @@ Downloading: https://naturalearth.s3.amazonaws.com/50m_physical/ne_50m_coastline
 <span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;nodes&#39;: {&#39;Bus&#39;: &lt;matplotlib.collections.PatchCollection at 0x7f60c06bb250&gt;},
+ &#39;branches&#39;: {&#39;Line&#39;: &lt;matplotlib.collections.LineCollection at 0x7f60c06bb390&gt;,
+  &#39;Transformer&#39;: &lt;matplotlib.collections.LineCollection at 0x7f60c06bb4d0&gt;},
+ &#39;flows&#39;: {}}
+</pre></div>
+</div>
+<img alt="_images/923aa6ed0644b6f0a8655266cc3dfd501f8ed4b94ef933d42d83cc9093e11b72.png" src="_images/923aa6ed0644b6f0a8655266cc3dfd501f8ed4b94ef933d42d83cc9093e11b72.png" />
 </div>
 </div>
 <p>… and power plant capacities:</p>
@@ -2342,6 +4214,12 @@ Downloading: https://naturalearth.s3.amazonaws.com/50m_physical/ne_50m_coastline
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f60c06b9a90&gt;
+</pre></div>
+</div>
+<img alt="_images/94d9e23d8fa7a7827ad3b64d7dcc774deab8e472b1d1691b204cda48a3cd9293.png" src="_images/94d9e23d8fa7a7827ad3b64d7dcc774deab8e472b1d1691b204cda48a3cd9293.png" />
+</div>
 </div>
 <p>This dataset also includes a few hydro storage units:</p>
 <div class="cell docutils container">
@@ -2350,19 +4228,293 @@ Downloading: https://naturalearth.s3.amazonaws.com/50m_physical/ne_50m_coastline
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>bus</th>
+      <th>control</th>
+      <th>type</th>
+      <th>p_nom</th>
+      <th>p_nom_mod</th>
+      <th>p_nom_extendable</th>
+      <th>p_nom_min</th>
+      <th>p_nom_max</th>
+      <th>p_nom_set</th>
+      <th>p_min_pu</th>
+      <th>...</th>
+      <th>state_of_charge_initial_per_period</th>
+      <th>state_of_charge_set</th>
+      <th>cyclic_state_of_charge</th>
+      <th>cyclic_state_of_charge_per_period</th>
+      <th>max_hours</th>
+      <th>efficiency_store</th>
+      <th>efficiency_dispatch</th>
+      <th>standing_loss</th>
+      <th>inflow</th>
+      <th>p_nom_opt</th>
+    </tr>
+    <tr>
+      <th>name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>100_220kV Pumped Hydro</th>
+      <td>100_220kV</td>
+      <td>PQ</td>
+      <td></td>
+      <td>144.5</td>
+      <td>0.0</td>
+      <td>False</td>
+      <td>0.0</td>
+      <td>inf</td>
+      <td>NaN</td>
+      <td>-1.0</td>
+      <td>...</td>
+      <td>False</td>
+      <td>NaN</td>
+      <td>False</td>
+      <td>False</td>
+      <td>6.0</td>
+      <td>0.95</td>
+      <td>0.95</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>114 Pumped Hydro</th>
+      <td>114</td>
+      <td>PQ</td>
+      <td></td>
+      <td>138.0</td>
+      <td>0.0</td>
+      <td>False</td>
+      <td>0.0</td>
+      <td>inf</td>
+      <td>NaN</td>
+      <td>-1.0</td>
+      <td>...</td>
+      <td>False</td>
+      <td>NaN</td>
+      <td>False</td>
+      <td>False</td>
+      <td>6.0</td>
+      <td>0.95</td>
+      <td>0.95</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>121 Pumped Hydro</th>
+      <td>121</td>
+      <td>PQ</td>
+      <td></td>
+      <td>238.0</td>
+      <td>0.0</td>
+      <td>False</td>
+      <td>0.0</td>
+      <td>inf</td>
+      <td>NaN</td>
+      <td>-1.0</td>
+      <td>...</td>
+      <td>False</td>
+      <td>NaN</td>
+      <td>False</td>
+      <td>False</td>
+      <td>6.0</td>
+      <td>0.95</td>
+      <td>0.95</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>3 rows × 36 columns</p>
+</div></div></div>
 </div>
 <p>So let’s solve the electricity market simulation for January 1, 2011. It’ll take a short moment.</p>
 <div class="cell tag_hide-output docutils container">
-<div class="cell_input docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="n">solver_name</span><span class="o">=</span><span class="s2">&quot;highs&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<details class="admonition hide below-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell output</p>
+<p class="expanded admonition-title">Hide code cell output</p>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following transformers have zero r, which could break the linear load flow:
+Index([&#39;2&#39;, &#39;5&#39;, &#39;10&#39;, &#39;12&#39;, &#39;13&#39;, &#39;15&#39;, &#39;18&#39;, &#39;20&#39;, &#39;22&#39;, &#39;24&#39;, &#39;26&#39;, &#39;30&#39;,
+       &#39;32&#39;, &#39;37&#39;, &#39;42&#39;, &#39;46&#39;, &#39;52&#39;, &#39;56&#39;, &#39;61&#39;, &#39;68&#39;, &#39;69&#39;, &#39;74&#39;, &#39;78&#39;, &#39;86&#39;,
+       &#39;87&#39;, &#39;94&#39;, &#39;95&#39;, &#39;96&#39;, &#39;99&#39;, &#39;100&#39;, &#39;104&#39;, &#39;105&#39;, &#39;106&#39;, &#39;107&#39;, &#39;117&#39;,
+       &#39;120&#39;, &#39;123&#39;, &#39;124&#39;, &#39;125&#39;, &#39;128&#39;, &#39;129&#39;, &#39;138&#39;, &#39;143&#39;, &#39;156&#39;, &#39;157&#39;,
+       &#39;159&#39;, &#39;160&#39;, &#39;165&#39;, &#39;184&#39;, &#39;191&#39;, &#39;195&#39;, &#39;201&#39;, &#39;220&#39;, &#39;231&#39;, &#39;232&#39;,
+       &#39;233&#39;, &#39;236&#39;, &#39;247&#39;, &#39;248&#39;, &#39;250&#39;, &#39;251&#39;, &#39;252&#39;, &#39;261&#39;, &#39;263&#39;, &#39;264&#39;,
+       &#39;267&#39;, &#39;272&#39;, &#39;279&#39;, &#39;281&#39;, &#39;282&#39;, &#39;292&#39;, &#39;303&#39;, &#39;307&#39;, &#39;308&#39;, &#39;312&#39;,
+       &#39;315&#39;, &#39;317&#39;, &#39;322&#39;, &#39;332&#39;, &#39;334&#39;, &#39;336&#39;, &#39;338&#39;, &#39;351&#39;, &#39;353&#39;, &#39;360&#39;,
+       &#39;362&#39;, &#39;382&#39;, &#39;384&#39;, &#39;385&#39;, &#39;391&#39;, &#39;403&#39;, &#39;404&#39;, &#39;413&#39;, &#39;421&#39;, &#39;450&#39;,
+       &#39;458&#39;],
+      dtype=&#39;object&#39;, name=&#39;name&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.model: Solve problem using Highs solver
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io:Writing objective.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:   0%|          | 0/15 [00:00&lt;?, ?it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  13%|█▎        | 2/15 [00:00&lt;00:01, 10.52it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  27%|██▋       | 4/15 [00:00&lt;00:00, 13.37it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  87%|████████▋ | 13/15 [00:00&lt;00:00, 28.95it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 15/15 [00:00&lt;00:00, 19.72it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:   0%|          | 0/6 [00:00&lt;?, ?it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:  33%|███▎      | 2/6 [00:00&lt;00:00, 18.70it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 6/6 [00:00&lt;00:00, 49.39it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.92s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.12.0 (git hash: 755a8e0): Copyright (c) 2025 HiGHS under MIT licence terms
+LP linopy-problem-jp5lxt5e has 142968 rows; 59640 cols; 261298 nonzeros
+Coefficient ranges:
+  Matrix  [1e-02, 2e+02]
+  Cost    [3e+00, 1e+02]
+  Bound   [0e+00, 0e+00]
+  RHS     [2e-11, 6e+03]
+WARNING: Problem has some excessively small row bounds
+Presolving model
+18737 rows, 44750 cols, 113266 nonzeros  0s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13253 rows, 39072 cols, 104687 nonzeros  0s
+12725 rows, 31714 cols, 97262 nonzeros  0s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dependent equations search running on 12697 equations with time limit of 1000.00s
+Dependent equations search removed 0 rows and 0 nonzeros in 0.00s (limit = 1000.00s)
+12697 rows, 31673 cols, 97185 nonzeros  0s
+Presolve reductions: rows 12697(-130271); columns 31673(-27967); nonzeros 97185(-164113) 
+Solving the presolved LP
+Using EKK dual simplex solver - serial
+  Iteration        Objective     Infeasibilities num(sum)
+          0     0.0000000000e+00 Ph1: 0(0) 0s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      17239     9.1992880405e+06 Pr: 0(0); Du: 0(1.2701e-13) 5s
+      17239     9.1992880405e+06 Pr: 0(0); Du: 0(1.2701e-13) 5s
+
+Performed postsolve
+Solving the original LP from the solution after postsolve
+
+Model name          : linopy-problem-jp5lxt5e
+Model status        : Optimal
+Simplex   iterations: 17239
+Objective value     :  9.1992880405e+06
+P-D objective error :  1.2148625240e-15
+HiGHS run time      :          4.75
+Writing the solution to /tmp/linopy-solve-uehd7ry5.sol
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.constants: Optimization successful: 
+Status: ok
+Termination condition: optimal
+Solution: 59640 primals, 142968 duals
+Objective: 9.20e+06
+Solver model: available
+Solver message: Optimal
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.optimization.optimize:The shadow-prices of the constraints Generator-fix-p-lower, Generator-fix-p-upper, Line-fix-s-lower, Line-fix-s-upper, Transformer-fix-s-lower, Transformer-fix-s-upper, StorageUnit-fix-p_dispatch-lower, StorageUnit-fix-p_dispatch-upper, StorageUnit-fix-p_store-lower, StorageUnit-fix-p_store-upper, StorageUnit-fix-state_of_charge-lower, StorageUnit-fix-state_of_charge-upper, Kirchhoff-Voltage-Law, StorageUnit-energy_balance were not assigned to the network.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
+</pre></div>
+</div>
+</div>
+</details>
 </div>
 <p>Now, we can also plot model outputs, like the calculated power flows on the network map.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">s_max_pu</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>name
+1      0.7
+2      0.7
+3      0.7
+4      0.7
+5      0.7
+      ... 
+855    0.7
+856    0.7
+857    0.7
+858    0.7
+859    0.7
+Name: s_max_pu, Length: 852, dtype: float64
 </pre></div>
 </div>
 </div>
@@ -2376,13 +4528,6 @@ Downloading: https://naturalearth.s3.amazonaws.com/50m_physical/ne_50m_coastline
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">norm</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">EqualEarth</span><span class="p">())</span>
 
@@ -2390,7 +4535,6 @@ Downloading: https://naturalearth.s3.amazonaws.com/50m_physical/ne_50m_coastline
     <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
     <span class="n">bus_sizes</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
     <span class="n">line_colors</span><span class="o">=</span><span class="n">line_loading</span><span class="p">,</span>
-    <span class="n">line_norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span>
     <span class="n">line_cmap</span><span class="o">=</span><span class="s2">&quot;plasma&quot;</span><span class="p">,</span>
     <span class="n">line_widths</span><span class="o">=</span><span class="n">n</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">s_nom</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">,</span>
 <span class="p">)</span>
@@ -2403,6 +4547,28 @@ Downloading: https://naturalearth.s3.amazonaws.com/50m_physical/ne_50m_coastline
 <span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">73</span><span class="p">],</span> <span class="n">line</span> <span class="mi">13</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">EqualEarth</span><span class="p">())</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">n</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">bus_sizes</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>      <span class="mi">9</span>     <span class="n">line_widths</span><span class="o">=</span><span class="n">n</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">s_nom</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span>
+<span class="ne">---&gt; </span><span class="mi">13</span>     <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">ScalarMappable</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;plasma&quot;</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">),</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span>     <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span>     <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Relative line loading [%]&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span>     <span class="n">shrink</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;norm&#39; is not defined
+</pre></div>
+</div>
+<img alt="_images/ab583cb9e58b156b76cc7ca23dda2bd55787492f9e0a8ae2d84edd193147913b.png" src="_images/ab583cb9e58b156b76cc7ca23dda2bd55787492f9e0a8ae2d84edd193147913b.png" />
 </div>
 </div>
 <p>Or plot the hourly dispatch grouped by carrier:</p>
@@ -2439,13 +4605,10 @@ Downloading: https://naturalearth.s3.amazonaws.com/50m_physical/ne_50m_coastline
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">EqualEarth</span><span class="p">())</span>
 
-<span class="n">norm</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>  <span class="c1"># €/MWh</span>
-
 <span class="n">n</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
     <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
     <span class="n">bus_colors</span><span class="o">=</span><span class="n">n</span><span class="o">.</span><span class="n">buses_t</span><span class="o">.</span><span class="n">marginal_price</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span>
     <span class="n">bus_cmap</span><span class="o">=</span><span class="s2">&quot;plasma&quot;</span><span class="p">,</span>
-    <span class="n">bus_norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span>
     <span class="n">bus_alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
 <span class="p">)</span>
 

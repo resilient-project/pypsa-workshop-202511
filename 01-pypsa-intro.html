@@ -893,13 +893,13 @@ Snapshots: 1
 <h2>Optimisation<a class="headerlink" href="#optimisation" title="Link to this heading">#</a></h2>
 <p>The design principle of PyPSA is that basically each component is associated with a set of variables and constraints that will be added to the optimisation model based on the input data stored for the components.</p>
 <p>For this dispatch problem, PyPSA will solve an optimisation problem that looks like this</p>
-<div class="amsmath math notranslate nohighlight" id="equation-704f74e2-6c60-480c-9594-784c083b1622">
-<span class="eqno">(1)<a class="headerlink" href="#equation-704f74e2-6c60-480c-9594-784c083b1622" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-cb9b1003-005a-45dc-923d-2ec98ab8add0">
+<span class="eqno">(1)<a class="headerlink" href="#equation-cb9b1003-005a-45dc-923d-2ec98ab8add0" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \min_{g_{s,t};} \sum_{t,s} o_{s} g_{s,t}
 \end{equation}\]</div>
 <p>such that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ce4bb646-496d-4f16-b046-4bd0f86ff614">
-<span class="eqno">(2)<a class="headerlink" href="#equation-ce4bb646-496d-4f16-b046-4bd0f86ff614" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4645106d-a46d-48bb-9810-9ed1d9f753e0">
+<span class="eqno">(2)<a class="headerlink" href="#equation-4645106d-a46d-48bb-9810-9ed1d9f753e0" title="Permalink to this equation">#</a></span>\[\begin{align}
 0 &amp; \leq g_{s,t} \leq G_{s}  &amp; \text{generation limits : generator} \\
 D_t &amp;= \sum_s g_{s,t} &amp; \text{market clearing : bus} \\
 \end{align}\]</div>
@@ -942,7 +942,7 @@ Solver message: Optimal
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.12.0 (git hash: 755a8e0): Copyright (c) 2025 HiGHS under MIT licence terms
-LP linopy-problem-5sex50o1 has 5 rows; 2 cols; 6 nonzeros
+LP linopy-problem-xjjfmlnu has 5 rows; 2 cols; 6 nonzeros
 Coefficient ranges:
   Matrix  [1e+00, 1e+00]
   Cost    [1e+01, 7e+01]
@@ -955,12 +955,12 @@ Presolve reductions: rows 0(-5); columns 0(-2); nonzeros 0(-6) - Reduced to empt
 Performed postsolve
 Solving the original LP from the solution after postsolve
 
-Model name          : linopy-problem-5sex50o1
+Model name          : linopy-problem-xjjfmlnu
 Model status        : Optimal
 Objective value     :  2.4000000000e+03
 P-D objective error :  0.0000000000e+00
 HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-53rthswg.sol
+Writing the solution to /tmp/linopy-solve-mvlym71e.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
@@ -1250,59 +1250,16 @@ Value: 2400.0
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">add_constraints</span><span class="p">(</span>
-    <span class="n">n</span><span class="o">.</span><span class="n">model</span><span class="p">[</span><span class="s2">&quot;Generator-p&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s2">&quot;Generator&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">n</span><span class="o">.</span><span class="n">loads</span><span class="o">.</span><span class="n">p_set</span><span class="p">[</span><span class="s2">&quot;Small town&quot;</span><span class="p">],</span>
+    <span class="n">n</span><span class="o">.</span><span class="n">model</span><span class="p">[</span><span class="s2">&quot;Generator-p&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s2">&quot;name&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">n</span><span class="o">.</span><span class="n">loads</span><span class="o">.</span><span class="n">p_set</span><span class="p">[</span><span class="s2">&quot;Small town&quot;</span><span class="p">],</span>
     <span class="n">name</span><span class="o">=</span><span class="s2">&quot;nodal_balance&quot;</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="nn">/tmp/ipykernel_2190/3862497019.py</span> in <span class="ni">?</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">n</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">add_constraints</span><span class="p">(</span>
-<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">n</span><span class="o">.</span><span class="n">model</span><span class="p">[</span><span class="s2">&quot;Generator-p&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s2">&quot;Generator&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">n</span><span class="o">.</span><span class="n">loads</span><span class="o">.</span><span class="n">p_set</span><span class="p">[</span><span class="s2">&quot;Small town&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">name</span><span class="o">=</span><span class="s2">&quot;nodal_balance&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="p">)</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/linopy/variables.py</span> in <span class="ni">?</span><span class="nt">(self, dim, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">936</span>             <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">937</span>         <span class="k">if</span> <span class="n">kwargs</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">938</span>             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unknown keyword argument(s): </span><span class="si">{</span><span class="n">kwargs</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">939</span> 
-<span class="ne">--&gt; </span><span class="mi">940</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_linexpr</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">dim</span><span class="p">)</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/linopy/expressions.py</span> in <span class="ni">?</span><span class="nt">(self, dim, drop_zeros, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">782</span>             <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">783</span>         <span class="k">if</span> <span class="n">kwargs</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">784</span>             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unknown keyword argument(s): </span><span class="si">{</span><span class="n">kwargs</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">785</span> 
-<span class="ne">--&gt; </span><span class="mi">786</span>         <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_sum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="n">dim</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">787</span> 
-<span class="g g-Whitespace">    </span><span class="mi">788</span>         <span class="k">if</span> <span class="n">drop_zeros</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">789</span>             <span class="n">res</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">densify_terms</span><span class="p">()</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/linopy/expressions.py</span> in <span class="ni">?</span><span class="nt">(cls, expr, dim)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1159</span>         <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1160</span>             <span class="n">dim</span> <span class="o">=</span> <span class="p">[</span><span class="n">d</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dim</span> <span class="k">if</span> <span class="n">d</span> <span class="o">!=</span> <span class="n">TERM_DIM</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1161</span>             <span class="n">ds</span> <span class="o">=</span> <span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1162</span>                 <span class="n">data</span><span class="p">[[</span><span class="s2">&quot;coeffs&quot;</span><span class="p">,</span> <span class="s2">&quot;vars&quot;</span><span class="p">]]</span>
-<span class="ne">-&gt; </span><span class="mi">1163</span>                 <span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">dim</span><span class="p">,</span> <span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1164</span>                 <span class="o">.</span><span class="n">rename</span><span class="p">({</span><span class="n">TERM_DIM</span><span class="p">:</span> <span class="n">STACKED_TERM_DIM</span><span class="p">})</span>
-<span class="g g-Whitespace">   </span><span class="mi">1165</span>                 <span class="o">.</span><span class="n">stack</span><span class="p">({</span><span class="n">TERM_DIM</span><span class="p">:</span> <span class="p">[</span><span class="n">STACKED_TERM_DIM</span><span class="p">]</span> <span class="o">+</span> <span class="n">dim</span><span class="p">},</span> <span class="n">create_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1166</span>             <span class="p">)</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/xarray/core/dataset.py</span> in <span class="ni">?</span><span class="nt">(self, dims_or_levels, drop)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4864</span>             <span class="n">dims_or_levels</span> <span class="o">=</span> <span class="p">[</span><span class="n">dims_or_levels</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">4865</span> 
-<span class="g g-Whitespace">   </span><span class="mi">4866</span>         <span class="n">invalid_coords</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">dims_or_levels</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_indexes</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4867</span>         <span class="k">if</span> <span class="n">invalid_coords</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">4868</span>             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">4869</span>                 <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">tuple</span><span class="p">(</span><span class="n">invalid_coords</span><span class="p">)</span><span class="si">}</span><span class="s2"> are not coordinates with an index&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">4870</span>             <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4871</span> 
-
-<span class="ne">ValueError</span>: (&#39;Generator&#39;,) are not coordinates with an index
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Constraint `nodal_balance` [snapshot: 1]:
+-----------------------------------------
+[now]: +1 Generator-p[now, gas] + 1 Generator-p[now, nuclear] = 120.0
 </pre></div>
 </div>
 </div>
@@ -1313,12 +1270,26 @@ Value: 2400.0
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Constraint `p_lower_gas` [snapshot: 1]:
+---------------------------------------
+[now]: +1 Generator-p[now, gas] ≥ -0.0
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">add_constraints</span><span class="p">(</span>
     <span class="n">n</span><span class="o">.</span><span class="n">model</span><span class="p">[</span><span class="s2">&quot;Generator-p&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;nuclear&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;p_lower_coal&quot;</span>
 <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Constraint `p_lower_coal` [snapshot: 1]:
+----------------------------------------
+[now]: +1 Generator-p[now, nuclear] ≥ -0.0
 </pre></div>
 </div>
 </div>
@@ -1332,6 +1303,13 @@ Value: 2400.0
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Constraint `p_upper_gas` [snapshot: 1]:
+---------------------------------------
+[now]: +1 Generator-p[now, gas] ≤ 50.0
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1339,6 +1317,13 @@ Value: 2400.0
     <span class="n">n</span><span class="o">.</span><span class="n">model</span><span class="p">[</span><span class="s2">&quot;Generator-p&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;nuclear&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="o">.</span><span class="n">generators</span><span class="o">.</span><span class="n">p_nom</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;nuclear&quot;</span><span class="p">],</span>
     <span class="n">name</span><span class="o">=</span><span class="s2">&quot;p_upper_nuclear&quot;</span><span class="p">,</span>
 <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Constraint `p_upper_nuclear` [snapshot: 1]:
+-------------------------------------------
+[now]: +1 Generator-p[now, nuclear] ≤ 100.0
 </pre></div>
 </div>
 </div>
@@ -1350,11 +1335,64 @@ Value: 2400.0
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>linopy.model.Constraints
+------------------------
+ * nodal_balance (snapshot)
+ * p_lower_gas (name, snapshot)
+ * p_lower_coal (name, snapshot)
+ * p_upper_gas (name, snapshot)
+ * p_upper_nuclear (name, snapshot)
+</pre></div>
+</div>
+</div>
 </div>
 <p>Let’s ensure that we get the same results as when using the <code class="docutils literal notranslate"><span class="pre">n.optimize()</span></code> function</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">solver_name</span><span class="o">=</span><span class="s2">&quot;highs&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.model: Solve problem using Highs solver
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.02s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.constants: Optimization successful: 
+Status: ok
+Termination condition: optimal
+Solution: 2 primals, 5 duals
+Objective: 2.40e+03
+Solver model: available
+Solver message: Optimal
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.12.0 (git hash: 755a8e0): Copyright (c) 2025 HiGHS under MIT licence terms
+LP linopy-problem-_13gdrs_ has 5 rows; 2 cols; 6 nonzeros
+Coefficient ranges:
+  Matrix  [1e+00, 1e+00]
+  Cost    [1e+01, 7e+01]
+  Bound   [0e+00, 0e+00]
+  RHS     [5e+01, 1e+02]
+Presolving model
+0 rows, 0 cols, 0 nonzeros  0s
+0 rows, 0 cols, 0 nonzeros  0s
+Presolve reductions: rows 0(-5); columns 0(-2); nonzeros 0(-6) - Reduced to empty
+Performed postsolve
+Solving the original LP from the solution after postsolve
+
+Model name          : linopy-problem-_13gdrs_
+Model status        : Optimal
+Objective value     :  2.4000000000e+03
+P-D objective error :  0.0000000000e+00
+HiGHS run time      :          0.00
+Writing the solution to /tmp/linopy-solve-qhc29gqy.sol
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
 </pre></div>
 </div>
 </div>
@@ -1365,6 +1403,43 @@ Value: 2400.0
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>name</th>
+      <th>gas</th>
+      <th>nuclear</th>
+    </tr>
+    <tr>
+      <th>snapshot</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>now</th>
+      <td>20.0</td>
+      <td>100.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 </section>
