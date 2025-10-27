@@ -37,7 +37,7 @@ n.model.add_constraints(
 
 [31m---------------------------------------------------------------------------[39m
 [31mValueError[39m                                Traceback (most recent call last)
-[32m/tmp/ipykernel_2133/3862497019.py[39m in [36m?[39m[34m()[39m
+[32m/tmp/ipykernel_2190/3862497019.py[39m in [36m?[39m[34m()[39m
 [32m      1[39m n.model.add_constraints(
 [32m----> [39m[32m2[39m     n.model[[33m"Generator-p"[39m].sum(dim=[33m"Generator"[39m) == n.loads.p_set[[33m"Small town"[39m],
 [32m      3[39m     name=[33m"nodal_balance"[39m,
