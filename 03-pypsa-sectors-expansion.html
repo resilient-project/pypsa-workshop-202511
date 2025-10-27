@@ -61,6 +61,7 @@
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '03-pypsa-sectors-expansion';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="New features: Stochastic Optimization in PyPSA" href="pypsa-stochastic.html" />
@@ -1069,10 +1070,10 @@ Index([&#39;hydrogen storage&#39;], dtype=&#39;object&#39;, name=&#39;name&#39;)
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:   0%|          | 0/11 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  82%|████████▏ | 9/11 [00:00&lt;00:00, 85.56it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  82%|████████▏ | 9/11 [00:00&lt;00:00, 86.33it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 11/11 [00:00&lt;00:00, 72.79it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 11/11 [00:00&lt;00:00, 73.27it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1081,14 +1082,14 @@ Index([&#39;hydrogen storage&#39;], dtype=&#39;object&#39;, name=&#39;name&#39;)
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:   0%|          | 0/7 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 7/7 [00:00&lt;00:00, 250.58it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 7/7 [00:00&lt;00:00, 251.91it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.2s
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.19s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.12.0 (git hash: 755a8e0): Copyright (c) 2025 HiGHS under MIT licence terms
-LP linopy-problem-i1z6kztm has 37237 rows; 17527 cols; 71227 nonzeros
+LP linopy-problem-429pj6_6 has 37237 rows; 17527 cols; 71227 nonzeros
 Coefficient ranges:
   Matrix  [1e-04, 4e+00]
   Cost    [4e-02, 2e+05]
@@ -1123,13 +1124,13 @@ Solver message: Optimal
 Performed postsolve
 Solving the original LP from the solution after postsolve
 
-Model name          : linopy-problem-i1z6kztm
+Model name          : linopy-problem-429pj6_6
 Model status        : Optimal
 Simplex   iterations: 14390
 Objective value     :  4.7521933007e+10
 P-D objective error :  5.6592007144e-14
-HiGHS run time      :          3.99
-Writing the solution to /tmp/linopy-solve-ln_zdydd.sol
+HiGHS run time      :          3.87
+Writing the solution to /tmp/linopy-solve-g84909_p.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
@@ -1796,10 +1797,10 @@ Index([&#39;0&#39;, &#39;1&#39;], dtype=&#39;object&#39;, name=&#39;name&#39;)
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:   0%|          | 0/12 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  75%|███████▌  | 9/12 [00:00&lt;00:00, 85.80it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  75%|███████▌  | 9/12 [00:00&lt;00:00, 88.16it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 12/12 [00:00&lt;00:00, 76.66it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 12/12 [00:00&lt;00:00, 79.03it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1808,14 +1809,14 @@ Index([&#39;0&#39;, &#39;1&#39;], dtype=&#39;object&#39;, name=&#39;name&#39;)
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:   0%|          | 0/7 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 7/7 [00:00&lt;00:00, 248.79it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 7/7 [00:00&lt;00:00, 254.08it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.2s
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.19s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.12.0 (git hash: 755a8e0): Copyright (c) 2025 HiGHS under MIT licence terms
-LP linopy-problem-3_upvi8f has 37238 rows; 17527 cols; 73417 nonzeros
+LP linopy-problem-gr8w6sga has 37238 rows; 17527 cols; 73417 nonzeros
 Coefficient ranges:
   Matrix  [1e-04, 4e+00]
   Cost    [4e-02, 2e+05]
@@ -1850,13 +1851,13 @@ Solver message: Optimal
 Performed postsolve
 Solving the original LP from the solution after postsolve
 
-Model name          : linopy-problem-3_upvi8f
+Model name          : linopy-problem-gr8w6sga
 Model status        : Optimal
 Simplex   iterations: 11327
 Objective value     :  7.5338336224e+10
 P-D objective error :  6.8862527914e-15
-HiGHS run time      :          3.35
-Writing the solution to /tmp/linopy-solve-7ja5cmhf.sol
+HiGHS run time      :          3.23
+Writing the solution to /tmp/linopy-solve-joyln5_5.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)

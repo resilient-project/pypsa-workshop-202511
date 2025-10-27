@@ -61,6 +61,7 @@
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '01-pypsa-intro';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="More pypsa features: more complex dispatch problems" href="02-pypsa-more-features.html" />
@@ -893,13 +894,13 @@ Snapshots: 1
 <h2>Optimisation<a class="headerlink" href="#optimisation" title="Link to this heading">#</a></h2>
 <p>The design principle of PyPSA is that basically each component is associated with a set of variables and constraints that will be added to the optimisation model based on the input data stored for the components.</p>
 <p>For this dispatch problem, PyPSA will solve an optimisation problem that looks like this</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7d3e8fb5-0938-4af9-9f99-d52902edd355">
-<span class="eqno">(1)<a class="headerlink" href="#equation-7d3e8fb5-0938-4af9-9f99-d52902edd355" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-9f4ab5ed-7231-491b-a522-ac5fb85148d5">
+<span class="eqno">(1)<a class="headerlink" href="#equation-9f4ab5ed-7231-491b-a522-ac5fb85148d5" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \min_{g_{s,t};} \sum_{t,s} o_{s} g_{s,t}
 \end{equation}\]</div>
 <p>such that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-132eb776-66f6-44cb-b4bb-306848b9ca4d">
-<span class="eqno">(2)<a class="headerlink" href="#equation-132eb776-66f6-44cb-b4bb-306848b9ca4d" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6c7badaa-1f2c-41b7-b823-32310a3b1b07">
+<span class="eqno">(2)<a class="headerlink" href="#equation-6c7badaa-1f2c-41b7-b823-32310a3b1b07" title="Permalink to this equation">#</a></span>\[\begin{align}
 0 &amp; \leq g_{s,t} \leq G_{s}  &amp; \text{generation limits : generator} \\
 D_t &amp;= \sum_s g_{s,t} &amp; \text{market clearing : bus} \\
 \end{align}\]</div>
@@ -942,7 +943,7 @@ Solver message: Optimal
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.12.0 (git hash: 755a8e0): Copyright (c) 2025 HiGHS under MIT licence terms
-LP linopy-problem-jkkmqijl has 5 rows; 2 cols; 6 nonzeros
+LP linopy-problem-r0mydxh8 has 5 rows; 2 cols; 6 nonzeros
 Coefficient ranges:
   Matrix  [1e+00, 1e+00]
   Cost    [1e+01, 7e+01]
@@ -955,12 +956,12 @@ Presolve reductions: rows 0(-5); columns 0(-2); nonzeros 0(-6) - Reduced to empt
 Performed postsolve
 Solving the original LP from the solution after postsolve
 
-Model name          : linopy-problem-jkkmqijl
+Model name          : linopy-problem-r0mydxh8
 Model status        : Optimal
 Objective value     :  2.4000000000e+03
 P-D objective error :  0.0000000000e+00
 HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-58tj7wc2.sol
+Writing the solution to /tmp/linopy-solve-gtdcn8lk.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
@@ -1364,7 +1365,7 @@ Solver message: Optimal
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.12.0 (git hash: 755a8e0): Copyright (c) 2025 HiGHS under MIT licence terms
-LP linopy-problem-gweyc7d9 has 5 rows; 2 cols; 6 nonzeros
+LP linopy-problem-8wuk37di has 5 rows; 2 cols; 6 nonzeros
 Coefficient ranges:
   Matrix  [1e+00, 1e+00]
   Cost    [1e+01, 7e+01]
@@ -1377,12 +1378,12 @@ Presolve reductions: rows 0(-5); columns 0(-2); nonzeros 0(-6) - Reduced to empt
 Performed postsolve
 Solving the original LP from the solution after postsolve
 
-Model name          : linopy-problem-gweyc7d9
+Model name          : linopy-problem-8wuk37di
 Model status        : Optimal
 Objective value     :  2.4000000000e+03
 P-D objective error :  0.0000000000e+00
 HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-n3p1oaow.sol
+Writing the solution to /tmp/linopy-solve-8vkyhxza.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
