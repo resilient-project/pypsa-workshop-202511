@@ -1,0 +1,84 @@
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+    ~~~~~~~~~^
+        nb,
+        ^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/nbclient/client.py", line 1319, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/asyncio/base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+        cell, index, execution_count=self.code_cells_executed + 1
+    )
+  File "/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+n.model.add_constraints(
+    n.model["Generator-p"].sum(dim="Generator") == n.loads.p_set["Small town"],
+    name="nodal_balance",
+)
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mValueError[39m                                Traceback (most recent call last)
+[32m/tmp/ipykernel_2125/3862497019.py[39m in [36m?[39m[34m()[39m
+[32m      1[39m n.model.add_constraints(
+[32m----> [39m[32m2[39m     n.model[[33m"Generator-p"[39m].sum(dim=[33m"Generator"[39m) == n.loads.p_set[[33m"Small town"[39m],
+[32m      3[39m     name=[33m"nodal_balance"[39m,
+[32m      4[39m )
+
+[32m/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/linopy/variables.py[39m in [36m?[39m[34m(self, dim, **kwargs)[39m
+[32m    936[39m             )
+[32m    937[39m         [38;5;28;01mif[39;00m kwargs:
+[32m    938[39m             [38;5;28;01mraise[39;00m ValueError(f"Unknown keyword argument(s): {kwargs}")
+[32m    939[39m 
+[32m--> [39m[32m940[39m         [38;5;28;01mreturn[39;00m self.to_linexpr().sum(dim)
+
+[32m/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/linopy/expressions.py[39m in [36m?[39m[34m(self, dim, drop_zeros, **kwargs)[39m
+[32m    782[39m             )
+[32m    783[39m         [38;5;28;01mif[39;00m kwargs:
+[32m    784[39m             [38;5;28;01mraise[39;00m ValueError(f"Unknown keyword argument(s): {kwargs}")
+[32m    785[39m 
+[32m--> [39m[32m786[39m         res = self.__class__(self._sum(self, dim=dim), self.model)
+[32m    787[39m 
+[32m    788[39m         [38;5;28;01mif[39;00m drop_zeros:
+[32m    789[39m             res = res.densify_terms()
+
+[32m/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/linopy/expressions.py[39m in [36m?[39m[34m(cls, expr, dim)[39m
+[32m   1159[39m         [38;5;28;01melse[39;00m:
+[32m   1160[39m             dim = [d [38;5;28;01mfor[39;00m d [38;5;28;01min[39;00m dim [38;5;28;01mif[39;00m d != TERM_DIM]
+[32m   1161[39m             ds = (
+[32m   1162[39m                 data[[[33m"coeffs"[39m, [33m"vars"[39m]]
+[32m-> [39m[32m1163[39m                 .reset_index(dim, drop=[38;5;28;01mTrue[39;00m)
+[32m   1164[39m                 .rename({TERM_DIM: STACKED_TERM_DIM})
+[32m   1165[39m                 .stack({TERM_DIM: [STACKED_TERM_DIM] + dim}, create_index=[38;5;28;01mFalse[39;00m)
+[32m   1166[39m             )
+
+[32m/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/xarray/core/dataset.py[39m in [36m?[39m[34m(self, dims_or_levels, drop)[39m
+[32m   4864[39m             dims_or_levels = [dims_or_levels]
+[32m   4865[39m 
+[32m   4866[39m         invalid_coords = set(dims_or_levels) - set(self._indexes)
+[32m   4867[39m         [38;5;28;01mif[39;00m invalid_coords:
+[32m-> [39m[32m4868[39m             raise ValueError(
+[32m   4869[39m                 f"{tuple(invalid_coords)} are not coordinates with an index"
+[32m   4870[39m             )
+[32m   4871[39m 
+
+[31mValueError[39m: ('Generator',) are not coordinates with an index
+
