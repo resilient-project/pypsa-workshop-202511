@@ -497,13 +497,13 @@ document.write(`
 <section id="let-s-consider-a-more-general-form-of-an-electricity-dispatch-problem">
 <h2>Let’s consider a more general form of an electricity dispatch problem<a class="headerlink" href="#let-s-consider-a-more-general-form-of-an-electricity-dispatch-problem" title="Link to this heading">#</a></h2>
 <p>For an <em>hourly</em> electricity market dispatch simulation, PyPSA will solve an optimisation problem that looks like this</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a005aa7e-553a-4cc7-87fb-914bcc6d071c">
-<span class="eqno">(3)<a class="headerlink" href="#equation-a005aa7e-553a-4cc7-87fb-914bcc6d071c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-96dcd9bb-f197-4919-ba56-898651f04d60">
+<span class="eqno">(3)<a class="headerlink" href="#equation-96dcd9bb-f197-4919-ba56-898651f04d60" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \min_{g_{i,s,t}; f_{\ell,t}; g_{i,r,t,\text{charge}}; g_{i,r,t,\text{discharge}}; e_{i,r,t}} \sum_{i,s,t} o_{s} g_{i,s,t}
 \end{equation}\]</div>
 <p>such that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2f7e24c8-6a4b-4069-b46e-2595df9398c1">
-<span class="eqno">(4)<a class="headerlink" href="#equation-2f7e24c8-6a4b-4069-b46e-2595df9398c1" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-122f638f-37fa-4d2d-bbdb-596cce806c6c">
+<span class="eqno">(4)<a class="headerlink" href="#equation-122f638f-37fa-4d2d-bbdb-596cce806c6c" title="Permalink to this equation">#</a></span>\[\begin{align}
 0 &amp; \leq g_{i,s,t} \leq \hat{g}_{i,s,t} G_{i,s}  &amp; \text{generation limits : generator} \\
 -F_\ell &amp;\leq f_{\ell,t} \leq F_\ell &amp; \text{transmission limits : line}  \\
 d_{i,t} &amp;= \sum_s g_{i,s,t} + \sum_r g_{i,r,t,\text{discharge}} - \sum_r g_{i,r,t,\text{charge}} - \sum_\ell K_{i\ell} f_{\ell,t} &amp; \text{nodal energy balance : bus} \\
@@ -1621,7 +1621,7 @@ Solver message: Optimal
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.12.0 (git hash: 755a8e0): Copyright (c) 2025 HiGHS under MIT licence terms
-LP linopy-problem-vb_6lgpg has 14 rows; 6 cols; 19 nonzeros
+LP linopy-problem-9_jwe92d has 14 rows; 6 cols; 19 nonzeros
 Coefficient ranges:
   Matrix  [1e+00, 1e+00]
   Cost    [2e+01, 2e+02]
@@ -1634,12 +1634,12 @@ Presolve reductions: rows 0(-14); columns 0(-6); nonzeros 0(-19) - Reduced to em
 Performed postsolve
 Solving the original LP from the solution after postsolve
 
-Model name          : linopy-problem-vb_6lgpg
+Model name          : linopy-problem-9_jwe92d
 Model status        : Optimal
 Objective value     :  1.3813912524e+06
 P-D objective error :  0.0000000000e+00
 HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-tq8nunbz.sol
+Writing the solution to /tmp/linopy-solve-_fuusi1k.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
@@ -1907,8 +1907,8 @@ Writing the solution to /tmp/linopy-solve-tq8nunbz.sol
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;nodes&#39;: {&#39;Bus&#39;: &lt;matplotlib.collections.PatchCollection at 0x7fc3952352b0&gt;},
- &#39;branches&#39;: {&#39;Line&#39;: &lt;matplotlib.collections.LineCollection at 0x7fc395235400&gt;},
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;nodes&#39;: {&#39;Bus&#39;: &lt;matplotlib.collections.PatchCollection at 0x7f029cd092b0&gt;},
+ &#39;branches&#39;: {&#39;Line&#39;: &lt;matplotlib.collections.LineCollection at 0x7f029cd09400&gt;},
  &#39;flows&#39;: {}}
 </pre></div>
 </div>
@@ -1933,8 +1933,8 @@ Downloading: https://naturalearth.s3.amazonaws.com/50m_physical/ne_50m_coastline
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;nodes&#39;: {&#39;Bus&#39;: &lt;matplotlib.collections.PatchCollection at 0x7fc395049810&gt;},
- &#39;branches&#39;: {&#39;Line&#39;: &lt;matplotlib.collections.LineCollection at 0x7fc395049950&gt;},
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;nodes&#39;: {&#39;Bus&#39;: &lt;matplotlib.collections.PatchCollection at 0x7f029cadd810&gt;},
+ &#39;branches&#39;: {&#39;Line&#39;: &lt;matplotlib.collections.LineCollection at 0x7f029cadd950&gt;},
  &#39;flows&#39;: {}}
 </pre></div>
 </div>
