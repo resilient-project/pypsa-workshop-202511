@@ -63,6 +63,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Annex Config" href="config-small-system.html" />
+    <link rel="prev" title="More pypsa features: more complex dispatch problems" href="02-pypsa-more-features.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -125,8 +127,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -182,7 +182,12 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01-pypsa-intro.html">Introduction to <code class="docutils literal notranslate"><span class="pre">pypsa</span></code> and <code class="docutils literal notranslate"><span class="pre">linopy</span></code>: a simple dispatch problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-pypsa-more-features.html">More <code class="docutils literal notranslate"><span class="pre">pypsa</span></code> features: more complex dispatch problems</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Advanced models in <code class="docutils literal notranslate"><span class="pre">pypsa</span></code>: capacity expansion planning with sector coupling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config-small-system.html">config-small-system.yaml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config-big-system.html">config-big-system.yaml</a></li>
 <li class="toctree-l1"><a class="reference internal" href="annex-python.html">Annex: Intro to the basics of <code class="docutils literal notranslate"><span class="pre">Python</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="annex-pandas.html">Annex: Tabular data analysis with <code class="docutils literal notranslate"><span class="pre">pandas</span></code></a></li>
 </ul>
@@ -1062,10 +1067,10 @@ Index([&#39;hydrogen storage&#39;], dtype=&#39;object&#39;, name=&#39;name&#39;)
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:   0%|          | 0/11 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  64%|██████▎   | 7/11 [00:00&lt;00:00, 60.27it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  64%|██████▎   | 7/11 [00:00&lt;00:00, 62.05it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 11/11 [00:00&lt;00:00, 55.59it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 11/11 [00:00&lt;00:00, 56.50it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1074,14 +1079,14 @@ Index([&#39;hydrogen storage&#39;], dtype=&#39;object&#39;, name=&#39;name&#39;)
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:   0%|          | 0/7 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 7/7 [00:00&lt;00:00, 178.74it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 7/7 [00:00&lt;00:00, 180.41it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.28s
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.27s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.12.0 (git hash: 755a8e0): Copyright (c) 2025 HiGHS under MIT licence terms
-LP linopy-problem-3la2w18c has 37237 rows; 17527 cols; 71227 nonzeros
+LP linopy-problem-54ck777r has 37237 rows; 17527 cols; 71227 nonzeros
 Coefficient ranges:
   Matrix  [1e-04, 4e+00]
   Cost    [4e-02, 2e+05]
@@ -1116,13 +1121,13 @@ Solver message: Optimal
 Performed postsolve
 Solving the original LP from the solution after postsolve
 
-Model name          : linopy-problem-3la2w18c
+Model name          : linopy-problem-54ck777r
 Model status        : Optimal
 Simplex   iterations: 14390
 Objective value     :  4.7521933007e+10
 P-D objective error :  5.6592007144e-14
-HiGHS run time      :          3.91
-Writing the solution to /tmp/linopy-solve-uq_pn7tk.sol
+HiGHS run time      :          3.89
+Writing the solution to /tmp/linopy-solve-wiff46cd.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
@@ -1789,10 +1794,10 @@ Index([&#39;0&#39;, &#39;1&#39;], dtype=&#39;object&#39;, name=&#39;name&#39;)
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:   0%|          | 0/12 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  58%|█████▊    | 7/12 [00:00&lt;00:00, 58.77it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  58%|█████▊    | 7/12 [00:00&lt;00:00, 62.04it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 12/12 [00:00&lt;00:00, 56.49it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 12/12 [00:00&lt;00:00, 59.90it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1801,14 +1806,14 @@ Index([&#39;0&#39;, &#39;1&#39;], dtype=&#39;object&#39;, name=&#39;name&#39;)
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:   0%|          | 0/7 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 7/7 [00:00&lt;00:00, 174.50it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 7/7 [00:00&lt;00:00, 183.04it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.27s
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.26s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.12.0 (git hash: 755a8e0): Copyright (c) 2025 HiGHS under MIT licence terms
-LP linopy-problem-a7vmj75n has 37238 rows; 17527 cols; 73417 nonzeros
+LP linopy-problem-1f6gvssf has 37238 rows; 17527 cols; 73417 nonzeros
 Coefficient ranges:
   Matrix  [1e-04, 4e+00]
   Cost    [4e-02, 2e+05]
@@ -1843,13 +1848,13 @@ Solver message: Optimal
 Performed postsolve
 Solving the original LP from the solution after postsolve
 
-Model name          : linopy-problem-a7vmj75n
+Model name          : linopy-problem-1f6gvssf
 Model status        : Optimal
 Simplex   iterations: 11327
 Objective value     :  7.5338336224e+10
 P-D objective error :  6.8862527914e-15
-HiGHS run time      :          3.25
-Writing the solution to /tmp/linopy-solve-195onevc.sol
+HiGHS run time      :          3.24
+Writing the solution to /tmp/linopy-solve-w7homy8e.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
@@ -1980,6 +1985,24 @@ dtype: float64
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="02-pypsa-more-features.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">More <code class="docutils literal notranslate"><span class="pre">pypsa</span></code> features: more complex dispatch problems</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="config-small-system.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Annex Config</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               

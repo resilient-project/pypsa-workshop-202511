@@ -63,6 +63,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="More pypsa features: more complex dispatch problems" href="02-pypsa-more-features.html" />
+    <link rel="prev" title="Welcome to the workshop!" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -125,8 +127,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -182,7 +182,12 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction to <code class="docutils literal notranslate"><span class="pre">pypsa</span></code> and <code class="docutils literal notranslate"><span class="pre">linopy</span></code>: a simple dispatch problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-pypsa-more-features.html">More <code class="docutils literal notranslate"><span class="pre">pypsa</span></code> features: more complex dispatch problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-pypsa-sectors-expansion.html">Advanced models in <code class="docutils literal notranslate"><span class="pre">pypsa</span></code>: capacity expansion planning with sector coupling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config-small-system.html">config-small-system.yaml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config-big-system.html">config-big-system.yaml</a></li>
 <li class="toctree-l1"><a class="reference internal" href="annex-python.html">Annex: Intro to the basics of <code class="docutils literal notranslate"><span class="pre">Python</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="annex-pandas.html">Annex: Tabular data analysis with <code class="docutils literal notranslate"><span class="pre">pandas</span></code></a></li>
 </ul>
@@ -886,13 +891,13 @@ Snapshots: 1
 <h2>Optimisation<a class="headerlink" href="#optimisation" title="Link to this heading">#</a></h2>
 <p>The design principle of PyPSA is that basically each component is associated with a set of variables and constraints that will be added to the optimisation model based on the input data stored for the components.</p>
 <p>For this dispatch problem, PyPSA will solve an optimisation problem that looks like this</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7bd4863d-3413-4a6b-b0ff-220339577524">
-<span class="eqno">()<a class="headerlink" href="#equation-7bd4863d-3413-4a6b-b0ff-220339577524" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d535602d-a546-4c19-aa85-9868b35397d1">
+<span class="eqno">(1)<a class="headerlink" href="#equation-d535602d-a546-4c19-aa85-9868b35397d1" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \min_{g_{s,t};} \sum_{t,s} o_{s} g_{s,t}
 \end{equation}\]</div>
 <p>such that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-35780203-a3a0-415b-b108-162ac54328c6">
-<span class="eqno">()<a class="headerlink" href="#equation-35780203-a3a0-415b-b108-162ac54328c6" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f72f892d-1108-480f-b7a8-5d7855357965">
+<span class="eqno">(2)<a class="headerlink" href="#equation-f72f892d-1108-480f-b7a8-5d7855357965" title="Permalink to this equation">#</a></span>\[\begin{align}
 0 &amp; \leq g_{s,t} \leq G_{s}  &amp; \text{generation limits : generator} \\
 D_t &amp;= \sum_s g_{s,t} &amp; \text{market clearing : bus} \\
 \end{align}\]</div>
@@ -922,7 +927,7 @@ Index([&#39;Springfield&#39;], dtype=&#39;object&#39;, name=&#39;name&#39;)
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.model: Solve problem using Highs solver
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.02s
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.01s
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.constants: Optimization successful: 
@@ -935,7 +940,7 @@ Solver message: Optimal
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.12.0 (git hash: 755a8e0): Copyright (c) 2025 HiGHS under MIT licence terms
-LP linopy-problem-t_zuod2j has 5 rows; 2 cols; 6 nonzeros
+LP linopy-problem-r4fpgvrr has 5 rows; 2 cols; 6 nonzeros
 Coefficient ranges:
   Matrix  [1e+00, 1e+00]
   Cost    [1e+01, 7e+01]
@@ -948,12 +953,12 @@ Presolve reductions: rows 0(-5); columns 0(-2); nonzeros 0(-6) - Reduced to empt
 Performed postsolve
 Solving the original LP from the solution after postsolve
 
-Model name          : linopy-problem-t_zuod2j
+Model name          : linopy-problem-r4fpgvrr
 Model status        : Optimal
 Objective value     :  2.4000000000e+03
 P-D objective error :  0.0000000000e+00
 HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-2b5enf2k.sol
+Writing the solution to /tmp/linopy-solve-qsw9_qp3.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
@@ -1252,7 +1257,7 @@ Value: 2400.0
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="nn">/tmp/ipykernel_2125/3862497019.py</span> in <span class="ni">?</span><span class="nt">()</span>
+<span class="nn">/tmp/ipykernel_2120/3862497019.py</span> in <span class="ni">?</span><span class="nt">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">n</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">add_constraints</span><span class="p">(</span>
 <span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">n</span><span class="o">.</span><span class="n">model</span><span class="p">[</span><span class="s2">&quot;Generator-p&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s2">&quot;Generator&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">n</span><span class="o">.</span><span class="n">loads</span><span class="o">.</span><span class="n">p_set</span><span class="p">[</span><span class="s2">&quot;Small town&quot;</span><span class="p">],</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">name</span><span class="o">=</span><span class="s2">&quot;nodal_balance&quot;</span><span class="p">,</span>
@@ -1393,6 +1398,24 @@ Value: 2400.0
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Welcome to the workshop!</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="02-pypsa-more-features.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">More <code class="docutils literal notranslate"><span class="pre">pypsa</span></code> features: more complex dispatch problems</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
