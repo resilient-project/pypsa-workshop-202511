@@ -499,13 +499,13 @@ document.write(`
 <section id="let-s-consider-a-more-general-form-of-an-electricity-dispatch-problem">
 <h2>Let’s consider a more general form of an electricity dispatch problem<a class="headerlink" href="#let-s-consider-a-more-general-form-of-an-electricity-dispatch-problem" title="Link to this heading">#</a></h2>
 <p>For an <em>hourly</em> electricity market dispatch simulation, PyPSA will solve an optimisation problem that looks like this</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a6deb615-4fb8-4983-a3eb-265d0765e08f">
-<span class="eqno">(3)<a class="headerlink" href="#equation-a6deb615-4fb8-4983-a3eb-265d0765e08f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1e2e7c31-52dc-4c25-a6ff-c5fcd0eacd34">
+<span class="eqno">(3)<a class="headerlink" href="#equation-1e2e7c31-52dc-4c25-a6ff-c5fcd0eacd34" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \min_{g_{i,s,t}; f_{\ell,t}; g_{i,r,t,\text{charge}}; g_{i,r,t,\text{discharge}}; e_{i,r,t}} \sum_{i,s,t} o_{s} g_{i,s,t}
 \end{equation}\]</div>
 <p>such that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3c1a66e1-d149-4d1a-bfea-fdcc851a9f21">
-<span class="eqno">(4)<a class="headerlink" href="#equation-3c1a66e1-d149-4d1a-bfea-fdcc851a9f21" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a6e098dd-dfa9-4189-b941-8b096c72ac5c">
+<span class="eqno">(4)<a class="headerlink" href="#equation-a6e098dd-dfa9-4189-b941-8b096c72ac5c" title="Permalink to this equation">#</a></span>\[\begin{align}
 0 &amp; \leq g_{i,s,t} \leq \hat{g}_{i,s,t} G_{i,s}  &amp; \text{generation limits : generator} \\
 -F_\ell &amp;\leq f_{\ell,t} \leq F_\ell &amp; \text{transmission limits : line}  \\
 d_{i,t} &amp;= \sum_s g_{i,s,t} + \sum_r g_{i,r,t,\text{discharge}} - \sum_r g_{i,r,t,\text{charge}} - \sum_\ell K_{i\ell} f_{\ell,t} &amp; \text{nodal energy balance : bus} \\
@@ -1623,7 +1623,7 @@ Solver message: Optimal
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.12.0 (git hash: 755a8e0): Copyright (c) 2025 HiGHS under MIT licence terms
-LP linopy-problem-rj8klj64 has 14 rows; 6 cols; 19 nonzeros
+LP linopy-problem-pi7iugbj has 14 rows; 6 cols; 19 nonzeros
 Coefficient ranges:
   Matrix  [1e+00, 1e+00]
   Cost    [2e+01, 2e+02]
@@ -1636,12 +1636,12 @@ Presolve reductions: rows 0(-14); columns 0(-6); nonzeros 0(-19) - Reduced to em
 Performed postsolve
 Solving the original LP from the solution after postsolve
 
-Model name          : linopy-problem-rj8klj64
+Model name          : linopy-problem-pi7iugbj
 Model status        : Optimal
 Objective value     :  1.3813912524e+06
 P-D objective error :  0.0000000000e+00
 HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-8kqim98s.sol
+Writing the solution to /tmp/linopy-solve-hx0pbd5v.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
@@ -1909,8 +1909,8 @@ Writing the solution to /tmp/linopy-solve-8kqim98s.sol
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;nodes&#39;: {&#39;Bus&#39;: &lt;matplotlib.collections.PatchCollection at 0x7f60d02312b0&gt;},
- &#39;branches&#39;: {&#39;Line&#39;: &lt;matplotlib.collections.LineCollection at 0x7f60d0231400&gt;},
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;nodes&#39;: {&#39;Bus&#39;: &lt;matplotlib.collections.PatchCollection at 0x7f3675db92b0&gt;},
+ &#39;branches&#39;: {&#39;Line&#39;: &lt;matplotlib.collections.LineCollection at 0x7f3675db9400&gt;},
  &#39;flows&#39;: {}}
 </pre></div>
 </div>
@@ -1935,8 +1935,8 @@ Downloading: https://naturalearth.s3.amazonaws.com/50m_physical/ne_50m_coastline
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;nodes&#39;: {&#39;Bus&#39;: &lt;matplotlib.collections.PatchCollection at 0x7f60caf3d810&gt;},
- &#39;branches&#39;: {&#39;Line&#39;: &lt;matplotlib.collections.LineCollection at 0x7f60caf3d950&gt;},
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;nodes&#39;: {&#39;Bus&#39;: &lt;matplotlib.collections.PatchCollection at 0x7f3675b91810&gt;},
+ &#39;branches&#39;: {&#39;Line&#39;: &lt;matplotlib.collections.LineCollection at 0x7f3675b91950&gt;},
  &#39;flows&#39;: {}}
 </pre></div>
 </div>
@@ -1959,8 +1959,8 @@ Downloading: https://naturalearth.s3.amazonaws.com/50m_physical/ne_50m_coastline
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;nodes&#39;: {&#39;Bus&#39;: &lt;matplotlib.collections.PatchCollection at 0x7f60caf99e50&gt;},
- &#39;branches&#39;: {&#39;Line&#39;: &lt;matplotlib.collections.LineCollection at 0x7f60caf99f90&gt;},
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;nodes&#39;: {&#39;Bus&#39;: &lt;matplotlib.collections.PatchCollection at 0x7f3675bdde50&gt;},
+ &#39;branches&#39;: {&#39;Line&#39;: &lt;matplotlib.collections.LineCollection at 0x7f3675bddf90&gt;},
  &#39;flows&#39;: {}}
 </pre></div>
 </div>
@@ -1992,8 +1992,8 @@ Name: p_set, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;nodes&#39;: {&#39;Bus&#39;: &lt;matplotlib.collections.PatchCollection at 0x7f60cafd9950&gt;},
- &#39;branches&#39;: {&#39;Line&#39;: &lt;matplotlib.collections.LineCollection at 0x7f60cafd9a90&gt;},
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;nodes&#39;: {&#39;Bus&#39;: &lt;matplotlib.collections.PatchCollection at 0x7f3675c4d950&gt;},
+ &#39;branches&#39;: {&#39;Line&#39;: &lt;matplotlib.collections.LineCollection at 0x7f3675c4da90&gt;},
  &#39;flows&#39;: {}}
 </pre></div>
 </div>
@@ -2068,8 +2068,8 @@ Name: now, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;nodes&#39;: {&#39;Bus&#39;: &lt;matplotlib.collections.PatchCollection at 0x7f60cafe5590&gt;},
- &#39;branches&#39;: {&#39;Line&#39;: &lt;matplotlib.collections.LineCollection at 0x7f60cafe56d0&gt;},
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;nodes&#39;: {&#39;Bus&#39;: &lt;matplotlib.collections.PatchCollection at 0x7f3675bf9590&gt;},
+ &#39;branches&#39;: {&#39;Line&#39;: &lt;matplotlib.collections.LineCollection at 0x7f3675bf96d0&gt;},
  &#39;flows&#39;: {}}
 </pre></div>
 </div>
@@ -2221,7 +2221,7 @@ Solver message: Optimal
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.12.0 (git hash: 755a8e0): Copyright (c) 2025 HiGHS under MIT licence terms
-LP linopy-problem-9aacfnh1 has 14 rows; 6 cols; 19 nonzeros
+LP linopy-problem-1emtkbwz has 14 rows; 6 cols; 19 nonzeros
 Coefficient ranges:
   Matrix  [1e+00, 1e+00]
   Cost    [2e+01, 2e+02]
@@ -2234,12 +2234,12 @@ Presolve reductions: rows 0(-14); columns 0(-6); nonzeros 0(-19) - Reduced to em
 Performed postsolve
 Solving the original LP from the solution after postsolve
 
-Model name          : linopy-problem-9aacfnh1
+Model name          : linopy-problem-1emtkbwz
 Model status        : Optimal
 Objective value     :  1.4503567697e+06
 P-D objective error :  1.6053330343e-16
 HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-s_9ugbh5.sol
+Writing the solution to /tmp/linopy-solve-c_hcv9bu.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
@@ -2504,7 +2504,7 @@ Solver message: Optimal
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.12.0 (git hash: 755a8e0): Copyright (c) 2025 HiGHS under MIT licence terms
-LP linopy-problem-vevoaaqm has 15 rows; 6 cols; 22 nonzeros
+LP linopy-problem-uzhd4dw9 has 15 rows; 6 cols; 22 nonzeros
 Coefficient ranges:
   Matrix  [3e-01, 1e+00]
   Cost    [2e+01, 2e+02]
@@ -2518,12 +2518,12 @@ Presolve reductions: rows 0(-15); columns 0(-6); nonzeros 0(-22) - Reduced to em
 Performed postsolve
 Solving the original LP from the solution after postsolve
 
-Model name          : linopy-problem-vevoaaqm
+Model name          : linopy-problem-uzhd4dw9
 Model status        : Optimal
 Objective value     :  2.2123131990e+06
 P-D objective error :  2.1048610218e-16
 HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-73z64mxs.sol
+Writing the solution to /tmp/linopy-solve-ld21bjnu.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
@@ -2688,7 +2688,7 @@ Solver message: Infeasible
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.12.0 (git hash: 755a8e0): Copyright (c) 2025 HiGHS under MIT licence terms
-LP linopy-problem-j438d5q5 has 15 rows; 6 cols; 22 nonzeros
+LP linopy-problem-h6ijqy2z has 15 rows; 6 cols; 22 nonzeros
 Coefficient ranges:
   Matrix  [3e-01, 1e+00]
   Cost    [2e+01, 2e+02]
@@ -2696,11 +2696,11 @@ Coefficient ranges:
   RHS     [8e-01, 4e+04]
 Presolving model
 Problem status detected on presolve: Infeasible
-Model name          : linopy-problem-j438d5q5
+Model name          : linopy-problem-h6ijqy2z
 Model status        : Infeasible
 Objective value     :  0.0000000000e+00
 HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-quwjupde.sol
+Writing the solution to /tmp/linopy-solve-nay7igz9.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;warning&#39;, &#39;infeasible&#39;)
@@ -2737,9 +2737,9 @@ Writing the solution to /tmp/linopy-solve-quwjupde.sol
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;nodes&#39;: {&#39;Bus&#39;: &lt;matplotlib.collections.PatchCollection at 0x7f60c3f091d0&gt;},
- &#39;branches&#39;: {&#39;Line&#39;: &lt;matplotlib.collections.LineCollection at 0x7f60c3f09310&gt;,
-  &#39;Transformer&#39;: &lt;matplotlib.collections.LineCollection at 0x7f60c3f09450&gt;},
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;nodes&#39;: {&#39;Bus&#39;: &lt;matplotlib.collections.PatchCollection at 0x7f36745191d0&gt;},
+ &#39;branches&#39;: {&#39;Line&#39;: &lt;matplotlib.collections.LineCollection at 0x7f3674519310&gt;,
+  &#39;Transformer&#39;: &lt;matplotlib.collections.LineCollection at 0x7f3674519450&gt;},
  &#39;flows&#39;: {}}
 </pre></div>
 </div>
@@ -4166,9 +4166,9 @@ Writing the solution to /tmp/linopy-solve-quwjupde.sol
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;nodes&#39;: {&#39;Bus&#39;: &lt;matplotlib.collections.PatchCollection at 0x7f60c06bb250&gt;},
- &#39;branches&#39;: {&#39;Line&#39;: &lt;matplotlib.collections.LineCollection at 0x7f60c06bb390&gt;,
-  &#39;Transformer&#39;: &lt;matplotlib.collections.LineCollection at 0x7f60c06bb4d0&gt;},
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;nodes&#39;: {&#39;Bus&#39;: &lt;matplotlib.collections.PatchCollection at 0x7f36743c7250&gt;},
+ &#39;branches&#39;: {&#39;Line&#39;: &lt;matplotlib.collections.LineCollection at 0x7f36743c7390&gt;,
+  &#39;Transformer&#39;: &lt;matplotlib.collections.LineCollection at 0x7f36743c74d0&gt;},
  &#39;flows&#39;: {}}
 </pre></div>
 </div>
@@ -4215,10 +4215,10 @@ Writing the solution to /tmp/linopy-solve-quwjupde.sol
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f60c06b9a90&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f36743c5a90&gt;
 </pre></div>
 </div>
-<img alt="_images/94d9e23d8fa7a7827ad3b64d7dcc774deab8e472b1d1691b204cda48a3cd9293.png" src="_images/94d9e23d8fa7a7827ad3b64d7dcc774deab8e472b1d1691b204cda48a3cd9293.png" />
+<img alt="_images/2326095c60ae688f3eb3adcac68c4dcffc625c6c6f49f639d2fd1639732fd1dd.png" src="_images/2326095c60ae688f3eb3adcac68c4dcffc625c6c6f49f639d2fd1639732fd1dd.png" />
 </div>
 </div>
 <p>This dataset also includes a few hydro storage units:</p>
@@ -4408,16 +4408,16 @@ Index([&#39;2&#39;, &#39;5&#39;, &#39;10&#39;, &#39;12&#39;, &#39;13&#39;, &#39;
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:   0%|          | 0/15 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  13%|█▎        | 2/15 [00:00&lt;00:01, 10.52it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  13%|█▎        | 2/15 [00:00&lt;00:01,  9.57it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  27%|██▋       | 4/15 [00:00&lt;00:00, 13.37it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  27%|██▋       | 4/15 [00:00&lt;00:00, 12.68it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  87%|████████▋ | 13/15 [00:00&lt;00:00, 28.95it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  87%|████████▋ | 13/15 [00:00&lt;00:00, 28.24it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 15/15 [00:00&lt;00:00, 19.72it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 15/15 [00:00&lt;00:00, 19.27it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -4426,17 +4426,17 @@ Index([&#39;2&#39;, &#39;5&#39;, &#39;10&#39;, &#39;12&#39;, &#39;13&#39;, &#39;
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:   0%|          | 0/6 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:  33%|███▎      | 2/6 [00:00&lt;00:00, 18.70it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:  50%|█████     | 3/6 [00:00&lt;00:00, 29.33it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 6/6 [00:00&lt;00:00, 49.39it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 6/6 [00:00&lt;00:00, 53.70it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.92s
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.93s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.12.0 (git hash: 755a8e0): Copyright (c) 2025 HiGHS under MIT licence terms
-LP linopy-problem-jp5lxt5e has 142968 rows; 59640 cols; 261298 nonzeros
+LP linopy-problem-p1epl60m has 142968 rows; 59640 cols; 263626 nonzeros
 Coefficient ranges:
   Matrix  [1e-02, 2e+02]
   Cost    [3e+00, 1e+02]
@@ -4444,36 +4444,36 @@ Coefficient ranges:
   RHS     [2e-11, 6e+03]
 WARNING: Problem has some excessively small row bounds
 Presolving model
-18737 rows, 44750 cols, 113266 nonzeros  0s
+18737 rows, 44750 cols, 115742 nonzeros  0s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13253 rows, 39072 cols, 104687 nonzeros  0s
-12725 rows, 31714 cols, 97262 nonzeros  0s
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dependent equations search running on 12697 equations with time limit of 1000.00s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13268 rows, 39087 cols, 107549 nonzeros  0s
+12701 rows, 31690 cols, 99620 nonzeros  0s
+Dependent equations search running on 12693 equations with time limit of 1000.00s
 Dependent equations search removed 0 rows and 0 nonzeros in 0.00s (limit = 1000.00s)
-12697 rows, 31673 cols, 97185 nonzeros  0s
-Presolve reductions: rows 12697(-130271); columns 31673(-27967); nonzeros 97185(-164113) 
+12693 rows, 31669 cols, 99607 nonzeros  0s
+Presolve reductions: rows 12693(-130275); columns 31669(-27971); nonzeros 99607(-164019) 
 Solving the presolved LP
-Using EKK dual simplex solver - serial
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using EKK dual simplex solver - serial
   Iteration        Objective     Infeasibilities num(sum)
           0     0.0000000000e+00 Ph1: 0(0) 0s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      17239     9.1992880405e+06 Pr: 0(0); Du: 0(1.2701e-13) 5s
-      17239     9.1992880405e+06 Pr: 0(0); Du: 0(1.2701e-13) 5s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      17213     9.1992880405e+06 Pr: 0(0); Du: 0(3.55271e-15) 5s
+      17213     9.1992880405e+06 Pr: 0(0); Du: 0(3.55271e-15) 5s
 
 Performed postsolve
 Solving the original LP from the solution after postsolve
 
-Model name          : linopy-problem-jp5lxt5e
+Model name          : linopy-problem-p1epl60m
 Model status        : Optimal
-Simplex   iterations: 17239
+Simplex   iterations: 17213
 Objective value     :  9.1992880405e+06
-P-D objective error :  1.2148625240e-15
-HiGHS run time      :          4.75
-Writing the solution to /tmp/linopy-solve-uehd7ry5.sol
+P-D objective error :  8.0990834933e-15
+HiGHS run time      :          5.02
+Writing the solution to /tmp/linopy-solve-3c9ti88p.sol
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.constants: Optimization successful: 
@@ -4568,7 +4568,7 @@ Name: s_max_pu, Length: 852, dtype: float64
 <span class="ne">NameError</span>: name &#39;norm&#39; is not defined
 </pre></div>
 </div>
-<img alt="_images/ab583cb9e58b156b76cc7ca23dda2bd55787492f9e0a8ae2d84edd193147913b.png" src="_images/ab583cb9e58b156b76cc7ca23dda2bd55787492f9e0a8ae2d84edd193147913b.png" />
+<img alt="_images/f171e2c859363fd12633dce214cc6b95b6eedff1c81727f2b7619d1018da257d.png" src="_images/f171e2c859363fd12633dce214cc6b95b6eedff1c81727f2b7619d1018da257d.png" />
 </div>
 </div>
 <p>Or plot the hourly dispatch grouped by carrier:</p>

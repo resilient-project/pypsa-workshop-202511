@@ -23,69 +23,68 @@ If that does not work download the `.ipynb` file and import it in [Google Colab]
 
 ## Setting up your Python environment locally
 
-### Anaconda
+### Using `uv` (recommended)
 
-Coordinating the compatibility between different Python software packages and
-their multiple versions can be difficult! Fortunately, the problem is solved by
-using a Python _distribution_ and/or _package manager_.
+We recommend using [`uv`](https://docs.astral.sh/uv/) - a fast Python package and project manager. It's significantly faster than traditional tools like `conda` or `pip` and provides excellent dependency resolution.
 
-For instance, you can install on your computer the popular [Anaconda Python
-Distribution](https://www.anaconda.com/download/) or the ligth version `miniconda` described below.
+For **Windows users**, note that many company laptops have restrictions for installing new software. In previous workshops, we have found that installations on Windows are more prone to errors so we strongly recommend using Windows Subsystem for Linux (WSL). [Windows Subsystem for Linux](https://learn.microsoft.com/en-us/windows/wsl/install) or an [Ubuntu Virtual Machine](https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-using-virtualbox#1-overview) are two nice options for using Linux on a Windows machine.
 
-For **Linux and MacOS users**, you can access the command line by opening the
-_terminal_ program.
+### Installing `uv`
 
-For **Windows users**, note that many company laptops have restrictions for installing new software. In previous workshops, we have found that installations on Windows are more prone to errors so we strongly recommend using Linux. [Windows Subsystem for Linux](https://learn.microsoft.com/en-us/windows/wsl/install) or an [Ubuntu Virtual Machine](https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-using-virtualbox#1-overview) are two nice options for using Linux on a Windows machine.
+On **macOS and Linux**:
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
 
-## Managing environments with `conda`
+On **Windows**:
+```powershell
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
 
-Python coupled with a package manager provides a way to make isolated,
-reproducible _environments_ where you have control over all installed packages
-and configurations. Here is [a great short article](https://medium.com/data-science/conda-essential-concepts-and-tricks-e478ed53b5b) that contains all the essential concepts and tips about using `conda`.
+For other installation methods, see the [official uv installation guide](https://docs.astral.sh/uv/getting-started/installation/).
 
-### Tip: use lightweight `miniconda`
+## Setting up the workshop environment
 
-Instead of `Anaconda`, you use a lightweight installation called
-[`miniconda`](https://docs.conda.io/en/latest/miniconda.html). It is very likely that you don't want the full Anaconda Python Distribution.
+### Clone the repository
 
+First, clone or download this repository:
+```bash
+git clone https://github.com/resilient-project/pypsa-workshop-202511.git
+cd pypsa-workshop-202511
+```
 
-## Environment for this course: `workshop`
+### Install dependencies with `uv`
 
-### ... with `conda` (recommended)
+The project dependencies are specified in `pyproject.toml`. To create a virtual environment and install all dependencies:
 
-The latest environment specification for this course can be downloaded under the following link as a [`YAML`-file](https://en.wikipedia.org/wiki/YAML):
+```bash
+uv sync
+```
 
-https://github.com/resilient-project/pypsa-workshop-202511/blob/main/environment.yaml
+This will:
+- Create a virtual environment in `.venv/`
+- Install Python 3.13 (if not already available)
+- Install all required packages including PyPSA 1.0+
+- Create a `uv.lock` file with exact versions
 
-There is a download button at the top-right corner.
+### Activate the environment
 
-After navigating to the folder where the `environment.yaml` file is stored ([here](https://tutorials.codebar.io/command-line/introduction/tutorial.html)'s a tutorial how to navigate with the command line),
-you can reate this environment using `conda`
+**On Linux/MacOS**:
+```bash
+source .venv/bin/activate
+```
 
-    conda env create -f environment.yaml
+**On Windows**:
+```powershell
+.venv\Scripts\activate
+```
 
-Activate this environment
+### Alternative: Using `pip`
 
-    conda activate workshop
+If you prefer using `pip`, you can install from `requirements.txt`:
 
-The environment has to be activated whenever you open a new terminal,
-*before* starting a new Jupyter window with
-
-    jupyter lab
-
-### ... with `pip`
-
-If you want to use `pip` for managing your environment, download
-
-https://github.com/resilient-project/pypsa-workshop-202511/blob/main/requirements.txt
-
-There is a download button at the top-right corner.
-
-After navigating to the folder where the `requirements.txt` file is stored,
-you can install the required packages with
-
-    pip install -r requirements.txt
-
-This should allow you to start a new Jupyter window:
-
-    jupyter lab
+```bash
+python -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+```
