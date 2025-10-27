@@ -1,0 +1,23 @@
+# Python virtual environments
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Jupyter
+.ipynb-checkpoints
+
+# Data and output files
+*.geojson
+*.nc
+*.tiff
+*.tif
+*.html
+*.png
+*cleared.ipynb
+pypsa-workshop-202511/tmp/
+pypsa-workshop-202511/_build/
+pypsa-workshop-202511/tmp.csv
+pypsa-workshop-202511/data
+data/

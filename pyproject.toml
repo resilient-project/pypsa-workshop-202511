@@ -1,0 +1,31 @@
+[project]
+name = "workshop-202511"
+version = "2025.10.0"
+requires-python = ">=3.13,<3.14"
+dependencies = [
+    "numpy",
+    "scipy",
+    "pandas>=2",
+    "geopandas>=1",
+    "xarray",
+    "pyyaml",
+    "netcdf4",
+    "pypsa>=1",
+    "pysheds",
+    "ipython",
+    "jupyterlab",
+    "tabula-py",
+    "xlrd",
+    "lxml",
+    "tables",
+    "pyxlsb",
+    "openpyxl",
+    "shapely>2",
+    "pyepsg",
+    "cartopy>=0.22",
+    "matplotlib>=3.9",
+    "plotly",
+    "graphviz",
+    "jupyter-book",
+    "highspy>=1.5.3",
+]
