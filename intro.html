@@ -390,16 +390,11 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#google-colab">Google Colab</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-special-note-for-windows-users">A special note for Windows users</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-your-python-environment-locally">Setting up your Python environment locally</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-uv-recommended">Using <code class="docutils literal notranslate"><span class="pre">uv</span></code> (recommended)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-uv">Installing <code class="docutils literal notranslate"><span class="pre">uv</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-the-workshop-environment">Setting up the workshop environment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-miniconda">Install Miniconda</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clone-the-repository">Clone the repository</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-dependencies-with-uv">Install dependencies with <code class="docutils literal notranslate"><span class="pre">uv</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activate-the-environment">Activate the environment</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alternative-using-pip">Alternative: Using <code class="docutils literal notranslate"><span class="pre">pip</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-and-activate-the-environment">Create and activate the environment</a></li>
 </ul>
 </li>
 </ul>
@@ -427,69 +422,40 @@ The workshop is co-organised by the <strong>ENSYS research group at TU Berlin</s
 <p>Open any jupyter notebook and click on the rocket 🚀 in the top right corner. It will launch a Colab workspace in your browser with the jupyter notebook loaded.</p>
 <p>If that does not work download the <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file and import it in <a class="reference external" href="https://colab.research.google.com/">Google Colab</a></p>
 </section>
-<section id="setting-up-your-python-environment-locally">
-<h2>Setting up your Python environment locally<a class="headerlink" href="#setting-up-your-python-environment-locally" title="Link to this heading">#</a></h2>
-<section id="using-uv-recommended">
-<h3>Using <code class="docutils literal notranslate"><span class="pre">uv</span></code> (recommended)<a class="headerlink" href="#using-uv-recommended" title="Link to this heading">#</a></h3>
-<p>We recommend using <a class="reference external" href="https://docs.astral.sh/uv/"><code class="docutils literal notranslate"><span class="pre">uv</span></code></a> - a fast Python package and project manager. It’s significantly faster than traditional tools like <code class="docutils literal notranslate"><span class="pre">conda</span></code> or <code class="docutils literal notranslate"><span class="pre">pip</span></code> and provides excellent dependency resolution.</p>
+<section id="a-special-note-for-windows-users">
+<h2>A special note for Windows users<a class="headerlink" href="#a-special-note-for-windows-users" title="Link to this heading">#</a></h2>
 <p>For <strong>Windows users</strong>, note that many company laptops have restrictions for installing new software. In previous workshops, we have found that installations on Windows are more prone to errors so we strongly recommend using Windows Subsystem for Linux (WSL). <a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/install">Windows Subsystem for Linux</a> or an <a class="reference external" href="https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-using-virtualbox#1-overview">Ubuntu Virtual Machine</a> are two nice options for using Linux on a Windows machine.</p>
 </section>
-<section id="installing-uv">
-<h3>Installing <code class="docutils literal notranslate"><span class="pre">uv</span></code><a class="headerlink" href="#installing-uv" title="Link to this heading">#</a></h3>
-<p>On <strong>macOS and Linux</strong>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-LsSf<span class="w"> </span>https://astral.sh/uv/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
-</pre></div>
-</div>
-<p>On <strong>Windows</strong>:</p>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">powershell</span> <span class="n">-ExecutionPolicy</span> <span class="n">ByPass</span> <span class="n">-c</span> <span class="s2">&quot;irm https://astral.sh/uv/install.ps1 | iex&quot;</span>
-</pre></div>
-</div>
-<p>For other installation methods, see the <a class="reference external" href="https://docs.astral.sh/uv/getting-started/installation/">official uv installation guide</a>.</p>
+<section id="setting-up-your-python-environment-locally">
+<h2>Setting up your Python environment locally<a class="headerlink" href="#setting-up-your-python-environment-locally" title="Link to this heading">#</a></h2>
+<p>Python coupled with a package manager provides a way to make isolated, reproducible <em>environments</em> where you have control over all installed packages and configurations. We recommend using <a class="reference external" href="https://docs.anaconda.com/miniconda/"><code class="docutils literal notranslate"><span class="pre">conda</span></code></a> to manage your Python environments.</p>
+<section id="install-miniconda">
+<h3>Install Miniconda<a class="headerlink" href="#install-miniconda" title="Link to this heading">#</a></h3>
+<p>Install the lightweight <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html"><code class="docutils literal notranslate"><span class="pre">miniconda</span></code></a> distribution. You likely don’t need the full Anaconda Python Distribution. Here is <a class="reference external" href="https://medium.com/data-science/conda-essential-concepts-and-tricks-e478ed53b5b">a great short article</a> that contains all the essential concepts and tips about using <code class="docutils literal notranslate"><span class="pre">conda</span></code>.</p>
 </section>
-</section>
-<section id="setting-up-the-workshop-environment">
-<h2>Setting up the workshop environment<a class="headerlink" href="#setting-up-the-workshop-environment" title="Link to this heading">#</a></h2>
 <section id="clone-the-repository">
 <h3>Clone the repository<a class="headerlink" href="#clone-the-repository" title="Link to this heading">#</a></h3>
-<p>First, clone or download this repository:</p>
+<p>Clone this repository to get the workshop materials:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/resilient-project/pypsa-workshop-202511.git
 <span class="nb">cd</span><span class="w"> </span>pypsa-workshop-202511
 </pre></div>
 </div>
 </section>
-<section id="install-dependencies-with-uv">
-<h3>Install dependencies with <code class="docutils literal notranslate"><span class="pre">uv</span></code><a class="headerlink" href="#install-dependencies-with-uv" title="Link to this heading">#</a></h3>
-<p>The project dependencies are specified in <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>. To create a virtual environment and install all dependencies:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>sync
-</pre></div>
-</div>
-<p>This will:</p>
+<section id="create-and-activate-the-environment">
+<h3>Create and activate the environment<a class="headerlink" href="#create-and-activate-the-environment" title="Link to this heading">#</a></h3>
+<p>We recommend using the locked environment files from <a class="reference external" href="https://github.com/PyPSA/pypsa-eur/tree/master/envs">PyPSA-Eur</a> for reproducibility. Download the appropriate file for your platform:</p>
 <ul class="simple">
-<li><p>Create a virtual environment in <code class="docutils literal notranslate"><span class="pre">.venv/</span></code></p></li>
-<li><p>Install Python 3.13 (if not already available)</p></li>
-<li><p>Install all required packages including PyPSA 1.0+</p></li>
-<li><p>Create a <code class="docutils literal notranslate"><span class="pre">uv.lock</span></code> file with exact versions</p></li>
+<li><p><strong>Linux (Intel/AMD)</strong>: <code class="docutils literal notranslate"><span class="pre">linux-64.lock.yaml</span></code></p></li>
+<li><p><strong>macOS (Intel)</strong>: <code class="docutils literal notranslate"><span class="pre">osx-64.lock.yaml</span></code></p></li>
+<li><p><strong>macOS (Apple Silicon)</strong>: <code class="docutils literal notranslate"><span class="pre">osx-arm64.lock.yaml</span></code></p></li>
+<li><p><strong>Windows</strong>: <code class="docutils literal notranslate"><span class="pre">win-64.lock.yaml</span></code></p></li>
 </ul>
-</section>
-<section id="activate-the-environment">
-<h3>Activate the environment<a class="headerlink" href="#activate-the-environment" title="Link to this heading">#</a></h3>
-<p><strong>On Linux/MacOS</strong>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+<p>Create the conda environment:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>linux-64.lock.yaml<span class="w">  </span><span class="c1"># replace with your platform&#39;s file</span>
+conda<span class="w"> </span>activate<span class="w"> </span>pypsa-eur
 </pre></div>
 </div>
-<p><strong>On Windows</strong>:</p>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="n">venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">activate</span>
-</pre></div>
-</div>
-</section>
-<section id="alternative-using-pip">
-<h3>Alternative: Using <code class="docutils literal notranslate"><span class="pre">pip</span></code><a class="headerlink" href="#alternative-using-pip" title="Link to this heading">#</a></h3>
-<p>If you prefer using <code class="docutils literal notranslate"><span class="pre">pip</span></code>, you can install from <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
-<span class="nb">source</span><span class="w"> </span>.venv/bin/activate<span class="w">  </span><span class="c1"># On Windows: .venv\Scripts\activate</span>
-pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
-</pre></div>
-</div>
+<p>For detailed installation instructions, including solver setup and platform-specific guidance, see the <a class="reference external" href="https://pypsa-eur.readthedocs.io/en/latest/installation.html">PyPSA-Eur installation documentation</a></p>
 </section>
 </section>
 <div class="toctree-wrapper compound">
@@ -552,16 +518,11 @@ pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </s
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#google-colab">Google Colab</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-special-note-for-windows-users">A special note for Windows users</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-your-python-environment-locally">Setting up your Python environment locally</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-uv-recommended">Using <code class="docutils literal notranslate"><span class="pre">uv</span></code> (recommended)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-uv">Installing <code class="docutils literal notranslate"><span class="pre">uv</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-the-workshop-environment">Setting up the workshop environment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-miniconda">Install Miniconda</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clone-the-repository">Clone the repository</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-dependencies-with-uv">Install dependencies with <code class="docutils literal notranslate"><span class="pre">uv</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activate-the-environment">Activate the environment</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alternative-using-pip">Alternative: Using <code class="docutils literal notranslate"><span class="pre">pip</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-and-activate-the-environment">Create and activate the environment</a></li>
 </ul>
 </li>
 </ul>
