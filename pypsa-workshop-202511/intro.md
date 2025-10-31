@@ -19,70 +19,41 @@ Open any jupyter notebook and click on the rocket 🚀 in the top right corner. 
 If that does not work download the `.ipynb` file and import it in [Google Colab](https://colab.research.google.com/)
 
 
-## Setting up your Python environment locally
-
-### Using `uv` (recommended)
-
-We recommend using [`uv`](https://docs.astral.sh/uv/) - a fast Python package and project manager. It's significantly faster than traditional tools like `conda` or `pip` and provides excellent dependency resolution.
+## A special note for Windows users
 
 For **Windows users**, note that many company laptops have restrictions for installing new software. In previous workshops, we have found that installations on Windows are more prone to errors so we strongly recommend using Windows Subsystem for Linux (WSL). [Windows Subsystem for Linux](https://learn.microsoft.com/en-us/windows/wsl/install) or an [Ubuntu Virtual Machine](https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-using-virtualbox#1-overview) are two nice options for using Linux on a Windows machine.
 
-### Installing `uv`
+## Setting up your Python environment locally
 
-On **macOS and Linux**:
-```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh
-```
+Python coupled with a package manager provides a way to make isolated, reproducible _environments_ where you have control over all installed packages and configurations. We recommend using [`conda`](https://docs.anaconda.com/miniconda/) to manage your Python environments.
 
-On **Windows**:
-```powershell
-powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
-```
+### Install Miniconda
 
-For other installation methods, see the [official uv installation guide](https://docs.astral.sh/uv/getting-started/installation/).
-
-## Setting up the workshop environment
+Install the lightweight [`miniconda`](https://docs.conda.io/en/latest/miniconda.html) distribution. You likely don't need the full Anaconda Python Distribution. Here is [a great short article](https://medium.com/data-science/conda-essential-concepts-and-tricks-e478ed53b5b) that contains all the essential concepts and tips about using `conda`.
 
 ### Clone the repository
 
-First, clone or download this repository:
+Clone this repository to get the workshop materials:
+
 ```bash
 git clone https://github.com/resilient-project/pypsa-workshop-202511.git
 cd pypsa-workshop-202511
 ```
 
-### Install dependencies with `uv`
+### Create and activate the environment
 
-The project dependencies are specified in `pyproject.toml`. To create a virtual environment and install all dependencies:
+We recommend using the locked environment files from [PyPSA-Eur](https://github.com/PyPSA/pypsa-eur/tree/master/envs) for reproducibility. Download the appropriate file for your platform:
 
-```bash
-uv sync
-```
+- **Linux (Intel/AMD)**: `linux-64.lock.yaml`
+- **macOS (Intel)**: `osx-64.lock.yaml`
+- **macOS (Apple Silicon)**: `osx-arm64.lock.yaml`
+- **Windows**: `win-64.lock.yaml`
 
-This will:
-- Create a virtual environment in `.venv/`
-- Install Python 3.13 (if not already available)
-- Install all required packages including PyPSA 1.0+
-- Create a `uv.lock` file with exact versions
-
-### Activate the environment
-
-**On Linux/MacOS**:
-```bash
-source .venv/bin/activate
-```
-
-**On Windows**:
-```powershell
-.venv\Scripts\activate
-```
-
-### Alternative: Using `pip`
-
-If you prefer using `pip`, you can install from `requirements.txt`:
+Create the conda environment:
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-pip install -r requirements.txt
+conda env create -f linux-64.lock.yaml  # replace with your platform's file
+conda activate pypsa-eur
 ```
+
+For detailed installation instructions, including solver setup and platform-specific guidance, see the [PyPSA-Eur installation documentation](https://pypsa-eur.readthedocs.io/en/latest/installation.html)
